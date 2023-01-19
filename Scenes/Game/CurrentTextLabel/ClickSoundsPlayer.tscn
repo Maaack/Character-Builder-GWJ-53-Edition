@@ -1,0 +1,69 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Audio/unicae_games/keypress-004.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Audio/unicae_games/keypress-001.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Audio/unicae_games/keypress-002.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/unicae_games/keypress-003.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/Game/CurrentTextLabel/ClickSoundsPlayer.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Audio/unicae_games/keypress-005.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/unicae_games/keypress-006.ogg" type="AudioStream" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Typing"
+length = 0.1
+loop = true
+step = 0.125
+tracks/0/type = "method"
+tracks/0/path = NodePath("ClickSoundsPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_sound"
+} ]
+}
+
+[sub_resource type="AudioStreamRandomPitch" id=2]
+audio_stream = ExtResource( 2 )
+
+[sub_resource type="AudioStreamRandomPitch" id=3]
+audio_stream = ExtResource( 3 )
+
+[sub_resource type="AudioStreamRandomPitch" id=4]
+audio_stream = ExtResource( 4 )
+
+[sub_resource type="AudioStreamRandomPitch" id=5]
+audio_stream = ExtResource( 1 )
+
+[sub_resource type="AudioStreamRandomPitch" id=6]
+audio_stream = ExtResource( 6 )
+
+[sub_resource type="AudioStreamRandomPitch" id=7]
+audio_stream = ExtResource( 7 )
+
+[node name="ClickSoundsPlayer" type="AnimationPlayer"]
+anims/Typing = SubResource( 1 )
+script = ExtResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 2 )
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 3 )
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 4 )
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 5 )
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 6 )
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 7 )

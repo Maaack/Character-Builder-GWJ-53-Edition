@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Game/AssistantChatBox/AssistantChatBox.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Game/CurrentTextLabel/ClickSoundsPlayer.tscn" type="PackedScene" id=2]
+
+[node name="AssistantChatBox" type="RichTextLabel"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 260.0
+margin_bottom = 548.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+script = ExtResource( 1 )
+char_wait_time = 0.015
+
+[node name="ClickSoundsPlayer" parent="." instance=ExtResource( 2 )]

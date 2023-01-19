@@ -1,0 +1,37 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "Intro"
+length = 6.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 2, 3, 3.3, 4.3, 4.5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "Welcome to Character Creator. A product of the Rosen & Tyrell Corp. We are happy to have -" ],
+"method": "add_assistant_text"
+}, {
+"args": [ "Skip." ],
+"method": "add_player_text"
+}, {
+"args": [ "To begin your training -" ],
+"method": "add_assistant_text"
+}, {
+"args": [ "Skip." ],
+"method": "add_player_text"
+}, {
+"args": [ "We'd like to remind you -" ],
+"method": "add_assistant_text"
+}, {
+"args": [ "Skip!" ],
+"method": "add_player_text"
+}, {
+"args": [ "Have a nice day!" ],
+"method": "add_assistant_text"
+} ]
+}

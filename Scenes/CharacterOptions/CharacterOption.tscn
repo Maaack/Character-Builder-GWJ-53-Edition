@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Themes/MainMenuTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/CharacterOptions/CharacterOption.gd" type="Script" id=2]
+
+[node name="CharacterOption" type="Control"]
+margin_bottom = 180.0
+rect_min_size = Vector2( 230, 180 )
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Button" type="Button" parent="MarginContainer"]
+margin_right = 230.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DescriptiveText" type="Label" parent="MarginContainer/Button/VBoxContainer"]
+unique_name_in_owner = true
+margin_right = 230.0
+margin_bottom = 116.0
+size_flags_vertical = 3
+align = 1
+valign = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/Button/VBoxContainer"]
+margin_top = 120.0
+margin_right = 230.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 60 )
+
+[node name="ValuesContainer" type="HBoxContainer" parent="MarginContainer/Button/VBoxContainer/Panel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="mouse_entered" from="MarginContainer/Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/Button" to="." method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/Button" to="." method="_on_Button_pressed"]
