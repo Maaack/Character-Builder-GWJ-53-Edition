@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/Game/GameUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/CharacterOptionData/Option111.tres" type="Resource" id=2]
@@ -7,11 +7,166 @@
 [ext_resource path="res://Resources/CharacterOptionData/Option100.tres" type="Resource" id=5]
 [ext_resource path="res://Resources/CharacterOptionData/Option300.tres" type="Resource" id=6]
 [ext_resource path="res://Resources/CharacterOptionData/Option030.tres" type="Resource" id=7]
+[ext_resource path="res://Scenes/Game/Levels/Level02.gd" type="Script" id=8]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Level02-Hovered"
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "What's it going to be?" ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Level02-Intro"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.3, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "In this next training excersise, the creator must -" ],
+"method": "add_assistant_text"
+}, {
+"args": [ "Oh no, I have to add?!" ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Level02-NotScared"
+length = 6.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 4.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Obviously not intimidated." ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Level02-ReallyNotScared"
+length = 6.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 4.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "It's just addition. Breath." ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Level02-Solved"
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Easy. Next?" ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Level02-Hovered"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Level02-Intro"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "Level02-ReallyNotScared"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Level02-NotScared"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "Level02-Solved"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachine" id=13]
+states/Hovered/node = SubResource( 5 )
+states/Hovered/position = Vector2( 591, 143 )
+states/Intro/node = SubResource( 6 )
+states/Intro/position = Vector2( 219, 143 )
+states/Level02-ReallyNotScared/node = SubResource( 16 )
+states/Level02-ReallyNotScared/position = Vector2( 785.679, 248 )
+states/NotScared/node = SubResource( 7 )
+states/NotScared/position = Vector2( 433, 255 )
+states/Solved/node = SubResource( 8 )
+states/Solved/position = Vector2( 940, 143 )
+transitions = [ "Intro", "NotScared", SubResource( 9 ), "Intro", "Hovered", SubResource( 10 ), "NotScared", "Hovered", SubResource( 11 ), "Hovered", "Solved", SubResource( 12 ), "Hovered", "Level02-ReallyNotScared", SubResource( 17 ), "Level02-ReallyNotScared", "Solved", SubResource( 18 ) ]
+start_node = "Intro"
+graph_offset = Vector2( 84.679, 0 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=14]
 
 [node name="Level02" instance=ExtResource( 1 )]
+script = ExtResource( 8 )
 available_options = [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 4 ) ]
 character_goal = ExtResource( 3 )
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
 text = "A wize mage."
 values = [ 0, 4, 0 ]
+
+[node name="AnimationPlayer" parent="." index="1"]
+anims/Level02-Hovered = SubResource( 2 )
+anims/Level02-Intro = SubResource( 1 )
+anims/Level02-NotScared = SubResource( 3 )
+anims/Level02-ReallyNotScared = SubResource( 15 )
+anims/Level02-Solved = SubResource( 4 )
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource( 13 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 14 )

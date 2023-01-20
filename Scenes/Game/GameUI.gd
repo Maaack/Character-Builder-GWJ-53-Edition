@@ -29,6 +29,7 @@ func _display_available_options():
 			var character_option_instance = character_option_scene.instance()
 			character_option_instance.values = available_option.values
 			character_option_instance.text = available_option.text
+			character_option_instance.text_values = available_option.text_values
 			available_options_container.get_container().add_child(character_option_instance)
 			character_option_instance.connect("selected", self, "_option_selected", [character_option_instance])
 			character_option_instance.connect("hovered_on", self, "_option_hovered_on", [character_option_instance])
@@ -41,6 +42,7 @@ func _display_character_goal():
 	if character_goal is OptionData:
 		character_goal_node.text = character_goal.text
 		character_goal_node.values = character_goal.values
+		character_goal_node.text_values = character_goal.text_values
 	
 
 func set_available_options(new_values):
@@ -77,6 +79,14 @@ func _option_hovered_on(_option_instance):
 func _option_hovered_off(_option_instance):
 	pass
 
+func _goal_reached():
+	pass
+
+func _active_options_updated():
+	var diff : int = _active_goal_diff()
+	if diff == 0:
+		_goal_reached()
+
 func _option_selected(option_instance):
 	var available_options_container = get_node_or_null("%AvailableContainer")
 	if available_options_container == null:
@@ -92,15 +102,22 @@ func _option_selected(option_instance):
 		active_options_container.get_container().remove_child(option_instance)
 		available_options_container.get_container().add_child(option_instance)
 		_remove_values_from_sums(option_instance.values)
+	_active_options_updated()
 
-func _active_equals_goal() -> bool:
+func _active_goal_diff() -> int:
+	var absolute_diff : int = 0
 	if character_goal is OptionData:
 		var i : int = 0
 		for value in character_goal.values:
-			if active_value_sums.size() < i + 1 or active_value_sums[i] != value:
-				return false
+			if active_value_sums.size() < i + 1:
+				break
+			absolute_diff += abs(active_value_sums[i] - value)
 			i += 1
-		return true
+	return absolute_diff
+
+func _active_equals_goal() -> bool:
+	if character_goal is OptionData:
+		return _active_goal_diff() == 0
 	return false
 
 func _on_SubmitButton_pressed():

@@ -1,7 +1,4 @@
-[gd_resource type="AnimationNodeStateMachine" load_steps=15 format=2]
-
-[sub_resource type="AnimationNodeAnimation" id=19]
-animation = "Level01-FiguringItOut"
+[gd_resource type="AnimationNodeStateMachine" load_steps=16 format=2]
 
 [sub_resource type="AnimationNodeAnimation" id=7]
 animation = "Level01-Clicked"
@@ -15,47 +12,55 @@ animation = "Level01-Hovered"
 [sub_resource type="AnimationNodeAnimation" id=3]
 animation = "Level01-Intro"
 
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "Level01-IntroContinued"
+
 [sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Level01-Thinking"
 
-[sub_resource type="AnimationNodeAnimation" id=14]
-animation = "Level01-FiguringItOut"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=5]
+[sub_resource type="AnimationNodeAnimation" id=27]
+animation = "Level01-ClickSubmit"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=9]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=10]
-switch_mode = 2
-auto_advance = true
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=11]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
 switch_mode = 2
+auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
 switch_mode = 2
 
 [resource]
-states/AfterClick/node = SubResource( 19 )
-states/AfterClick/position = Vector2( 769.005, 211.507 )
 states/Clicked/node = SubResource( 7 )
-states/Clicked/position = Vector2( 728, 109 )
+states/Clicked/position = Vector2( 756, 109 )
 states/FiguringItOut/node = SubResource( 16 )
-states/FiguringItOut/position = Vector2( 982, 109 )
+states/FiguringItOut/position = Vector2( 1018, 212 )
 states/Hovered/node = SubResource( 4 )
 states/Hovered/position = Vector2( 537, 109 )
 states/Intro/node = SubResource( 3 )
-states/Intro/position = Vector2( 125, 109 )
+states/Intro/position = Vector2( -94, 102 )
+states/Level01-IntroContinued/node = SubResource( 22 )
+states/Level01-IntroContinued/position = Vector2( 164.983, 109 )
 states/Level01-Thinking/node = SubResource( 8 )
-states/Level01-Thinking/position = Vector2( 345, 195 )
-states/SkipFiguringItOut/node = SubResource( 14 )
-states/SkipFiguringItOut/position = Vector2( 982, 217.507 )
-transitions = [ "Intro", "Hovered", SubResource( 5 ), "Hovered", "Clicked", SubResource( 9 ), "Intro", "Level01-Thinking", SubResource( 10 ), "Level01-Thinking", "Hovered", SubResource( 11 ), "FiguringItOut", "SkipFiguringItOut", SubResource( 18 ), "Clicked", "AfterClick", SubResource( 20 ), "AfterClick", "SkipFiguringItOut", SubResource( 21 ) ]
+states/Level01-Thinking/position = Vector2( 381, 192 )
+states/Solved/node = SubResource( 27 )
+states/Solved/position = Vector2( 1296.24, 109 )
+transitions = [ "Hovered", "Clicked", SubResource( 9 ), "Level01-Thinking", "Hovered", SubResource( 11 ), "Level01-IntroContinued", "Hovered", SubResource( 23 ), "Level01-IntroContinued", "Level01-Thinking", SubResource( 24 ), "Intro", "Level01-IntroContinued", SubResource( 25 ), "Clicked", "FiguringItOut", SubResource( 26 ), "FiguringItOut", "Solved", SubResource( 28 ), "Clicked", "Solved", SubResource( 29 ) ]
 start_node = "Intro"
-graph_offset = Vector2( 90.0054, 1.50685 )
+end_node = "Solved"
+graph_offset = Vector2( 336.401, 1.50685 )

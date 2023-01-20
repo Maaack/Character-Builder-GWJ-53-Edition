@@ -6,3 +6,4 @@
 script = ExtResource( 1 )
 text = ""
 values = [ 0, 0, 4 ]
+text_values = [ "", "", "", "" ]

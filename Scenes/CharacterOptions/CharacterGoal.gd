@@ -3,6 +3,7 @@ extends Control
 
 export(String) var text : String setget set_text
 export(Array, int) var values : Array = [0,0,0,0] setget set_values
+export(Array, String) var text_values : Array = ["","","",""] setget set_text_values
 
 var value_container_scene = preload("res://Scenes/CharacterOptions/ValueContainer.tscn")
 	
@@ -18,10 +19,15 @@ func _display_values():
 	if values.size() == 0:
 		return
 	var values_container = get_node("%ValuesContainer")
+	var i : int = 0
 	for value in values:
 		var value_container_instance = value_container_scene.instance()
 		value_container_instance.value = value
+		if text_values.size() >= i + 1:
+			value_container_instance.text_value = text_values[i]
 		values_container.add_child(value_container_instance)
+		i += 1
+
 
 func _display_text():
 	var text_container = get_node_or_null("%DescriptiveText")
@@ -31,6 +37,10 @@ func _display_text():
 
 func set_values(new_values):
 	values = new_values
+	_display_values()
+
+func set_text_values(new_values):
+	text_values = new_values
 	_display_values()
 
 func set_text(new_value):

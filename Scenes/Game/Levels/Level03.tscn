@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Game/GameUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/CharacterOptionData/Goal03-HighRoll.tres" type="Resource" id=2]
@@ -6,11 +6,182 @@
 [ext_resource path="res://Resources/CharacterOptionData/Option030.tres" type="Resource" id=4]
 [ext_resource path="res://Resources/CharacterOptionData/Option003.tres" type="Resource" id=5]
 [ext_resource path="res://Resources/CharacterOptionData/Option300.tres" type="Resource" id=6]
+[ext_resource path="res://Scenes/Game/Levels/Level03.gd" type="Script" id=7]
+[ext_resource path="res://Resources/CharacterOptionData/Option420.tres" type="Resource" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Level03-Intro"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ "I'm required to inform you -" ],
+"method": "add_assistant_text"
+}, {
+"args": [ "Ah again?" ],
+"method": "add_player_text"
+}, {
+"args": [ "I'm required to inform you of any non-standard level." ],
+"method": "add_assistant_text"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Level03-IntroContinued"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "What's that supposed to mean?" ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Level03-IntroContinued2"
+length = 6.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 3, 5.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "It means the level is not standard." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "You get sassy?" ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Level03-SelectionNoted"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 1.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "Selection noted." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "What? Why?" ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Level03-Solved"
+length = 4.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Done. No more of these, please." ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Level03-Intro"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "Level03-IntroContinued"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "Level03-IntroContinued2"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "Level03-SelectionNoted"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "Level03-Solved"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachine" id=3]
+states/Intro/node = SubResource( 2 )
+states/Intro/position = Vector2( 250, 146 )
+states/IntroContinued/node = SubResource( 9 )
+states/IntroContinued/position = Vector2( 492, 247 )
+states/IntroContinued2/node = SubResource( 10 )
+states/IntroContinued2/position = Vector2( 812, 247 )
+states/SelectionNoted/node = SubResource( 11 )
+states/SelectionNoted/position = Vector2( 812, 31 )
+states/Solved/node = SubResource( 12 )
+states/Solved/position = Vector2( 1070.48, 146 )
+transitions = [ "Intro", "Solved", SubResource( 13 ), "Intro", "IntroContinued", SubResource( 14 ), "IntroContinued", "IntroContinued2", SubResource( 15 ), "IntroContinued", "SelectionNoted", SubResource( 16 ), "IntroContinued2", "SelectionNoted", SubResource( 17 ), "IntroContinued2", "Solved", SubResource( 18 ), "IntroContinued", "Solved", SubResource( 19 ), "SelectionNoted", "Solved", SubResource( 20 ) ]
+start_node = "Intro"
+end_node = "Solved"
+graph_offset = Vector2( 176.484, 0 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
 
 [node name="Level03" instance=ExtResource( 1 )]
-available_options = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ) ]
+script = ExtResource( 7 )
+available_options = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 8 ) ]
 character_goal = ExtResource( 2 )
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
 text = "A high-roll across all"
 values = [ 5, 5, 5 ]
+
+[node name="AnimationPlayer" parent="." index="1"]
+anims/Level03-Intro = SubResource( 1 )
+anims/Level03-IntroContinued = SubResource( 5 )
+anims/Level03-IntroContinued2 = SubResource( 6 )
+anims/Level03-SelectionNoted = SubResource( 7 )
+anims/Level03-Solved = SubResource( 8 )
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource( 3 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 4 )

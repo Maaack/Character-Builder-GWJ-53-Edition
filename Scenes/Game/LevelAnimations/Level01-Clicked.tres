@@ -2,6 +2,7 @@
 
 [resource]
 resource_name = "Level01-Clicked"
+length = 1.5
 tracks/0/type = "method"
 tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1

@@ -2,7 +2,7 @@
 
 [resource]
 resource_name = "Level01-Hovered"
-length = 2.0
+length = 1.5
 tracks/0/type = "method"
 tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
@@ -13,7 +13,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "I assume I click one of these on the left." ],
+"args": [ "I bet I click one of these." ],
 "method": "add_player_text"
 } ]
 }

@@ -6,3 +6,4 @@
 script = ExtResource( 1 )
 text = "A high roll across all stats"
 values = [ 5, 5, 5 ]
+text_values = [ "", "", "", "" ]

@@ -9,10 +9,10 @@ func _next():
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		if $Control/ConfirmExit.visible:
-			$Control/ConfirmExit.hide()
-		elif $Control/ConfirmMainMenu.visible:
-			$Control/ConfirmMainMenu.hide()
+		if $Panel/ConfirmExit.visible:
+			$Panel/ConfirmExit.hide()
+		elif $Panel/ConfirmMainMenu.visible:
+			$Panel/ConfirmMainMenu.hide()
 		get_tree().set_input_as_handled()
 	if event.is_action_pressed("interact"):
 		_next()
@@ -30,10 +30,10 @@ func _on_RestartButton_pressed():
 	SceneLoader.reload_current_scene()
 
 func _on_MainMenuButton_pressed():
-	$Control/ConfirmMainMenu.popup_centered()
+	$Panel/ConfirmMainMenu.popup_centered()
 
 func _on_ExitButton_pressed():
-	$Control/ConfirmExit.popup_centered()
+	$Panel/ConfirmExit.popup_centered()
 
 func _ready():
 	if OS.has_feature("web"):

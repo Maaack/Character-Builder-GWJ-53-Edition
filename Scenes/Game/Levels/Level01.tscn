@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Game/GameUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/CharacterOptionData/Option111.tres" type="Resource" id=2]
@@ -13,6 +13,25 @@
 [ext_resource path="res://Scenes/Game/LevelAnimations/Level01-Thinking.tres" type="Animation" id=11]
 [ext_resource path="res://Scenes/Game/LevelAnimations/Level01-FiguringItOut.tres" type="Animation" id=12]
 [ext_resource path="res://Scenes/Game/LevelAnimations/Level01-AnimationTree.tres" type="AnimationNodeStateMachine" id=13]
+[ext_resource path="res://Scenes/Game/LevelAnimations/Level01-IntroContinued.tres" type="Animation" id=14]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Level01-ClickSubmit"
+length = 1.5
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "And I click submit. Easy." ],
+"method": "add_player_text"
+} ]
+}
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -25,10 +44,12 @@ character_goal = ExtResource( 8 )
 values = [ 4, 0, 0 ]
 
 [node name="AnimationPlayer" parent="." index="1"]
+anims/Level01-ClickSubmit = SubResource( 2 )
 anims/Level01-Clicked = ExtResource( 9 )
 anims/Level01-FiguringItOut = ExtResource( 12 )
 anims/Level01-Hovered = ExtResource( 10 )
 anims/Level01-Intro = ExtResource( 6 )
+anims/Level01-IntroContinued = ExtResource( 14 )
 anims/Level01-Thinking = ExtResource( 11 )
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]

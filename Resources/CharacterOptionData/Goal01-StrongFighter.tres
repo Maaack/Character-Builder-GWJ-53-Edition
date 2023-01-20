@@ -6,3 +6,4 @@
 script = ExtResource( 1 )
 text = "A strong fighter."
 values = [ 4, 0, 0 ]
+text_values = [ "", "", "", "" ]
