@@ -109,9 +109,10 @@ func _active_goal_diff() -> int:
 	if character_goal is OptionData:
 		var i : int = 0
 		for value in character_goal.values:
-			if active_value_sums.size() < i + 1:
-				break
-			absolute_diff += abs(active_value_sums[i] - value)
+			if active_value_sums.size() >= i + 1:
+				absolute_diff += abs(active_value_sums[i] - value)
+			else:
+				absolute_diff += abs(value)
 			i += 1
 	return absolute_diff
 

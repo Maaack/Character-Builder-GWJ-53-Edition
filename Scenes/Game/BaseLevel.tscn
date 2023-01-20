@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Game/AssistantChatBox/AssistantChatBox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Game/ScrollOptionsContainer.tscn" type="PackedScene" id=7]
 
-[node name="GameUI" type="Control"]
+[node name="BaseLevel" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )

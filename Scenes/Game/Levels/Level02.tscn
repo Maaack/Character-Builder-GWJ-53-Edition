@@ -36,7 +36,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.3, 2 ),
+"times": PoolRealArray( 0.3, 1.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "In this next training excersise, the creator must -" ],

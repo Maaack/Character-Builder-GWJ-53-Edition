@@ -100,7 +100,7 @@ character_goal = ExtResource( 2 )
 text = "A wize mage."
 values = [ 0, 4, 0 ]
 
-[node name="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer" index="2"]
+[node name="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer" index="0"]
 margin_right = 174.0
 margin_bottom = 24.0
 

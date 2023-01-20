@@ -18,6 +18,6 @@ text = "A street-magician with a deep sadness."
 values = [ 0, 1, 1, 4 ]
 text_values = [ "", "", "", "?" ]
 
-[node name="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer" index="2"]
+[node name="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer" index="0"]
 margin_right = 174.0
 margin_bottom = 24.0
