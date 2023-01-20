@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scenes/Game/GameUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/CharacterOptionData/Goal05-ASadMagician.tres" type="Resource" id=2]
 [ext_resource path="res://Resources/CharacterOptionData/OptionSomeSadness-0001.tres" type="Resource" id=3]
 [ext_resource path="res://Resources/CharacterOptionData/OptionMoreSadness-0003.tres" type="Resource" id=4]
@@ -17,3 +17,7 @@ character_goal = ExtResource( 2 )
 text = "A street-magician with a deep sadness."
 values = [ 0, 1, 1, 4 ]
 text_values = [ "", "", "", "?" ]
+
+[node name="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer" index="2"]
+margin_right = 174.0
+margin_bottom = 24.0

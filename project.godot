@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "BaseLevel",
 "language": "GDScript",
-"path": "res://Scenes/Game/GameUI.gd"
+"path": "res://Scenes/Game/BaseLevel.gd"
 }, {
 "base": "Node",
 "class": "GameLog",

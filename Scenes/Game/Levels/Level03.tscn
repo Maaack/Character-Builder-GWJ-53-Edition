@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=2]
 
-[ext_resource path="res://Scenes/Game/GameUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/CharacterOptionData/Goal03-HighRoll.tres" type="Resource" id=2]
 [ext_resource path="res://Resources/CharacterOptionData/Option111.tres" type="Resource" id=3]
 [ext_resource path="res://Resources/CharacterOptionData/Option030.tres" type="Resource" id=4]
