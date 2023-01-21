@@ -7,17 +7,14 @@
 [ext_resource path="res://Resources/CharacterOptionData/OptionMoreSadness-00030.tres" type="Resource" id=5]
 [ext_resource path="res://Resources/CharacterOptionData/OptionMoreMoney-00003.tres" type="Resource" id=6]
 [ext_resource path="res://Resources/CharacterOptionData/OptionSomeAgility-00100.tres" type="Resource" id=7]
-[ext_resource path="res://Resources/CharacterOptionData/OptionSomeSadness-00010.tres" type="Resource" id=8]
+[ext_resource path="res://Scenes/Game/Levels/Level06.gd" type="Script" id=9]
 
 [node name="Level06" instance=ExtResource( 1 )]
-available_options = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ) ]
+script = ExtResource( 9 )
+available_options = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ) ]
 character_goal = ExtResource( 2 )
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
-text = "A greedy, rich man."
+text = "A filthy-rich, greedy, tax-evading, billionaire."
 values = [ 0, 0, 0, 3, 6 ]
 text_values = [ "", "", "", "?", "?" ]
-
-[node name="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer" index="0"]
-margin_right = 174.0
-margin_bottom = 24.0

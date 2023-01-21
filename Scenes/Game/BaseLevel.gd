@@ -3,6 +3,7 @@ extends Control
 class_name BaseLevel
 
 signal success
+signal failure
 
 export(Array, Resource) var available_options : Array = [] setget set_available_options
 export(Resource) var character_goal : Resource setget set_character_goal
@@ -121,6 +122,17 @@ func _active_equals_goal() -> bool:
 		return _active_goal_diff() == 0
 	return false
 
-func _on_SubmitButton_pressed():
+func _level_failure():
+	emit_signal("failure")
+
+func _level_success():
+	emit_signal("success")
+
+func _level_success_or_failure():
 	if _active_equals_goal():
-		emit_signal("success")
+		_level_success()
+	else:
+		_level_failure()
+
+func _on_SubmitButton_pressed():
+	_level_success_or_failure()

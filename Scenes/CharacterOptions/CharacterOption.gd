@@ -18,16 +18,21 @@ func _display_clear_values():
 	for child in values_container.get_children():
 		child.queue_free()
 
-func _get_option_diff(input_values : Array) -> int:
+func get_option_diff(input_values : Array) -> int:
 	var absolute_diff : int = 0
 	var i : int = 0
-	for value in input_values:
+	for input_value in input_values:
 		if values.size() < i + 1:
 			break
-		absolute_diff += abs(values[i] - value)
+		absolute_diff += abs(values[i] - input_value)
 		i += 1
 	return absolute_diff
 
+func is_option_in(input_value_arrays : Array) -> bool:
+	for input_values in input_value_arrays:
+		if get_option_diff(input_values) == 0:
+			return true
+	return false
 
 func _display_values():
 	_display_clear_values()

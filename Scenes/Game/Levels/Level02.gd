@@ -7,7 +7,7 @@ var goal_reached = false
 
 func _option_hovered_on(option_instance):
 	._option_hovered_on(option_instance)
-	if not hovered:
+	if not hovered and option_instance.is_option_in([[0,3,0],[0,1,0]]):
 		animation_state_machine.travel("Hovered")
 		hovered = true
 

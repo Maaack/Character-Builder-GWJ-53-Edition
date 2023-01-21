@@ -14,7 +14,7 @@ func _input(event):
 		elif $Panel/ConfirmMainMenu.visible:
 			$Panel/ConfirmMainMenu.hide()
 		get_tree().set_input_as_handled()
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("ui_select"):
 		_next()
 		get_tree().set_input_as_handled()
 
