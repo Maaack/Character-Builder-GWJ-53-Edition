@@ -1,19 +1,16 @@
 # Attribution
 ## Collaborators
 
-### Role
-Person 1  
-Person 2  
-[Person w/ Link]()  
-
+### Programming, Writing, and Design
+[Maaack](https://maaack.itch.io/)  
 
 ## Sourced / Unaffiliated
-### Asset Type
-#### Use Case
-Author: [Name]()  
-Source: [Domain : webpage.html]()  
-License: [License]()
-
+### Audio
+#### Menu and Game Music
+Author: [Eric Matyas](www.soundimage.org)  
+Source: [Soundimage.org : Progress.mp3](https://soundimage.org/wp-content/uploads/2014/02/Progress.mp3)  
+Source: [Soundimage.org : High-Tech-City.mp3](https://soundimage.org/wp-content/uploads/2014/02/High-Tech-City.mp3)  
+License: [Attribution License](https://soundimage.org/attribution-info/)
 
 ## Tools
 #### Godot

@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/MainMenu/MainMenuButtons.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/OptionsMenu/MasterOptionsMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Themes/MainMenuTheme.tres" type="Theme" id=4]
 [ext_resource path="res://Scenes/UI/SoundButton/SoundButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Audio/Music/Progress.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/Credits/Credits.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=5]
@@ -337,14 +338,14 @@ custom_constants/separation = 24
 
 [node name="Title" type="Label" parent="TitleContainer/Titles/TitlesContainer"]
 margin_right = 832.0
-margin_bottom = 14.0
+margin_bottom = 24.0
 text = "Character Builder"
 align = 1
 
 [node name="SubTitle" type="Label" parent="TitleContainer/Titles/TitlesContainer"]
-margin_top = 38.0
+margin_top = 48.0
 margin_right = 832.0
-margin_bottom = 52.0
+margin_bottom = 72.0
 text = "For Godot Wild Jam #53"
 align = 1
 
@@ -434,6 +435,11 @@ anchor_bottom = 1.0
 margin_top = -40.0
 margin_right = 62.0
 text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+bus = "Music"
 
 [connection signal="pressed" from="MenuContainer/MainMenuButtons/ButtonsContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="MenuContainer/MainMenuButtons/ButtonsContainer/TutorialButton" to="." method="_on_TutorialButton_pressed"]

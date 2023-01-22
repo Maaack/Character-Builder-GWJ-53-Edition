@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Themes/MainMenuTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/CharacterOptions/CharacterGoal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Game/BaseLevel.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Game/AssistantChatBox/AssistantChatBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Audio/Music/High-Tech-City_Looping_1.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Scenes/Game/ScrollOptionsContainer.tscn" type="PackedScene" id=7]
 
 [node name="BaseLevel" type="Control"]
@@ -68,12 +69,12 @@ size_flags_vertical = 3
 
 [node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 7 )]
 unique_name_in_owner = true
-margin_bottom = 384.0
+margin_bottom = 406.0
 size_flags_vertical = 3
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 unique_name_in_owner = true
-margin_top = 388.0
+margin_top = 410.0
 margin_right = 308.0
 margin_bottom = 568.0
 text = "A strong fighter."
@@ -101,22 +102,20 @@ margin_bottom = 508.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel"]
 margin_right = 272.0
 margin_bottom = 508.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 12
-custom_constants/margin_top = 12
+custom_constants/margin_top = 4
 custom_constants/margin_left = 12
-custom_constants/margin_bottom = 12
+custom_constants/margin_bottom = 4
 
-[node name="AssistantChatBox" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer" instance=ExtResource( 4 )]
-margin_bottom = 496.0
+[node name="AssistantChatBox" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer" instance=ExtResource( 4 )]
+margin_top = 4.0
+margin_bottom = 504.0
+scroll_following = true
 
 [node name="Panel2" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
 margin_top = 512.0
@@ -147,5 +146,11 @@ size_flags_vertical = 3
 text = "Submit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
+autoplay = true
+bus = "Music"
 
 [connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel2/MarginContainer/HBoxContainer/SubmitButton" to="." method="_on_SubmitButton_pressed"]

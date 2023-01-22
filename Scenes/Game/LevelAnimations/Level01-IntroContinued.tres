@@ -2,15 +2,15 @@
 
 [resource]
 resource_name = "Level01-IntroContinued"
-length = 4.0
+length = 6.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.4, 1.4, 1.6, 2.6 ),
+"times": PoolRealArray( 0.1, 0.6, 2.9, 3.4, 5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [ "To begin your training -" ],

@@ -21,7 +21,6 @@ func _option_selected(option_instance):
 
 func _goal_reached():
 	if not goal_reached:
-		print("goal reached")
 		animation_state_machine.travel("Solved")
 		goal_reached = true
 	._goal_reached()

@@ -4,6 +4,18 @@ extends RichTextLabel
 export(float) var char_wait_time = 0.5
 var line_buffer : String
 
+onready var _v_scroll := get_v_scroll()
+onready var margin := get_parent()
+
+func _ready() -> void:
+	_v_scroll.connect("visibility_changed", self, "_on_scroll_bar_visibility_changed")
+
+func _on_scroll_bar_visibility_changed() -> void:
+	if _v_scroll.visible:
+		margin.set("custom_constants/margin_right", 0)
+	else:
+		margin.set("custom_constants/margin_right", _v_scroll.rect_size.x)
+
 func _line_buffer_empty():
 	return line_buffer.empty()
 
@@ -24,7 +36,7 @@ func _write_out_line():
 
 func add_assistant_text(value : String):
 	advance_assistant_text()
-	bbcode_text += "\n[b]Assistant :[/b] "
+	bbcode_text += "\n[b]Assistant:[/b]\n"
 	line_buffer = value
 	_write_out_line()
 
@@ -36,5 +48,5 @@ func advance_assistant_text():
 
 func add_player_text(value : String):
 	advance_assistant_text()
-	bbcode_text += "\n[b]Creator :[/b] "
-	bbcode_text += value
+	bbcode_text += "\n[right][b]Creator:[/b][/right]\n"
+	bbcode_text += "[right]" + value + "[/right]"

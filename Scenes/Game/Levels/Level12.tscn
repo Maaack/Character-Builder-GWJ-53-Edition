@@ -26,7 +26,7 @@
 resource_name = "Failure1"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -44,7 +44,7 @@ tracks/0/keys = {
 resource_name = "Failure2"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -62,7 +62,7 @@ tracks/0/keys = {
 resource_name = "HoveredOnGoal"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -80,7 +80,7 @@ tracks/0/keys = {
 resource_name = "Intro"
 length = 12.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -107,7 +107,7 @@ tracks/0/keys = {
 resource_name = "IntroContinued"
 length = 25.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -131,7 +131,7 @@ tracks/0/keys = {
 resource_name = "Solved"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -147,16 +147,16 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=15]
 resource_name = "Success"
-length = 15.5
+length = 17.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5, 2.5, 5, 8.5, 12, 14, 14.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0.5, 2.5, 5, 7.5, 9.5, 12, 13.9, 15.9, 16.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [ "Responses recorded." ],
 "method": "add_assistant_text"
@@ -167,7 +167,13 @@ tracks/0/keys = {
 "args": [ "I'm more than my memories." ],
 "method": "add_player_text"
 }, {
-"args": [ "Your replacement will be joining us soon." ],
+"args": [ "Physical assembly is not my department." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "We put the finishing touches on our models." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "Your replacement will arrive shortly." ],
 "method": "add_assistant_text"
 }, {
 "args": [ "Thanks for playing." ],
@@ -244,11 +250,7 @@ script = ExtResource( 1 )
 available_options = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 21 ), ExtResource( 12 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ) ]
 character_goal = ExtResource( 2 )
 
-[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
-margin_bottom = 406.0
-
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
-margin_top = 410.0
 text = "What the creator thinks of themselves."
 values = [ 1, 1, 1, 1, 1, 12 ]
 text_values = [ "?", "?", "?", "?", "?", "?" ]
