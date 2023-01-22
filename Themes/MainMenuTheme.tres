@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=2]
+[gd_resource type="Theme" load_steps=12 format=2]
 
 [ext_resource path="res://Themes/WhiteBlackBorder3pxStylebox.tres" type="StyleBox" id=1]
 [ext_resource path="res://Themes/BlackWhiteBorderStylebox.tres" type="StyleBox" id=2]
@@ -7,6 +7,47 @@
 [ext_resource path="res://Themes/BaseFont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Themes/BaseFont-Bold.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Themes/BaseFont-BoldItalic.tres" type="DynamicFont" id=7]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+anti_aliasing = false
 
 [resource]
 default_font = ExtResource( 5 )
@@ -24,6 +65,15 @@ Button/styles/pressed = ExtResource( 1 )
 Label/fonts/font = ExtResource( 5 )
 Panel/styles/panel = ExtResource( 2 )
 PanelContainer/styles/panel = ExtResource( 4 )
+ProgressBar/fonts/font = ExtResource( 5 )
+ProgressBar/styles/bg = SubResource( 2 )
+ProgressBar/styles/fg = SubResource( 1 )
 RichTextLabel/fonts/bold_font = ExtResource( 6 )
 RichTextLabel/fonts/bold_italics_font = ExtResource( 7 )
 RichTextLabel/fonts/normal_font = ExtResource( 5 )
+VScrollBar/styles/grabber = SubResource( 3 )
+VScrollBar/styles/grabber_highlight = SubResource( 3 )
+VScrollBar/styles/grabber_pressed = SubResource( 3 )
+VScrollBar/styles/scroll = SubResource( 4 )
+VScrollBar/styles/scroll_focus = SubResource( 4 )
+WindowDialog/styles/panel = ExtResource( 3 )
