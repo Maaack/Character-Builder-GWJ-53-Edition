@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource( 1 )
 text = "Hometown is a hotbed for crime and corruption."
-values = [ 0, 0, 0, 2, 0 ]
-text_values = [ "", "", "", "", "" ]
+values = [ 0, 0, 0, 0, 0, 2 ]
+text_values = [ "", "", "", "", "", "" ]

@@ -1,0 +1,292 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://Scenes/Game/Levels/Level12.gd" type="Script" id=1]
+[ext_resource path="res://Resources/CharacterOptionData/Goal12-WhatYouThinkOfYou.tres" type="Resource" id=2]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionSomeStrength-100000.tres" type="Resource" id=3]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionStrength-200000.tres" type="Resource" id=4]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionSomeAgility-001000.tres" type="Resource" id=5]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionWisdom-020000.tres" type="Resource" id=6]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionMoreWisdom-030000.tres" type="Resource" id=7]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionMoreStrength-300000.tres" type="Resource" id=8]
+[ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionSomeWisdom-010000.tres" type="Resource" id=10]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionAgility-002000.tres" type="Resource" id=11]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionSomeMoney-000010.tres" type="Resource" id=12]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionMoreMoney-000030.tres" type="Resource" id=13]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionMoreAgility-003000.tres" type="Resource" id=14]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionCharisma-000200.tres" type="Resource" id=15]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionSomeSadness-000001.tres" type="Resource" id=16]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionMoney-000020.tres" type="Resource" id=17]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionSomeCharisma-000100.tres" type="Resource" id=18]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionSadness-000002.tres" type="Resource" id=19]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionMoreSadness-000003.tres" type="Resource" id=20]
+[ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionMoreCharisma-000300.tres" type="Resource" id=21]
+
+[sub_resource type="Animation" id=18]
+resource_name = "Failure1"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Hm, you sure?" ],
+"method": "add_assistant_text"
+} ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "Failure2"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "I don't think so." ],
+"method": "add_assistant_text"
+} ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "HoveredOnGoal"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "I'm complicated." ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Intro"
+length = 12.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 3, 5, 9.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "I suppose I could be wrong about you?" ],
+"method": "add_assistant_text"
+}, {
+"args": [ "Yes, but more importantly..." ],
+"method": "add_player_text"
+}, {
+"args": [ "Why are there three submit buttons?" ],
+"method": "add_player_text"
+}, {
+"args": [ "Which will you choose?" ],
+"method": "add_assistant_text"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "IntroContinued"
+length = 25.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 6, 15.1, 22.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ "This is rather not-subtle for subliminal messaging." ],
+"method": "add_player_text"
+}, {
+"args": [ "Don't overthink it." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "You're really overthinking it." ],
+"method": "add_assistant_text"
+} ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Solved"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "So, how close was I?" ],
+"method": "add_assistant_text"
+} ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Success"
+length = 15.5
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 2.5, 5, 8.5, 12, 14, 14.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "Responses recorded." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "We are assembling the memories." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "I'm more than my memories." ],
+"method": "add_player_text"
+}, {
+"args": [ "Your replacement will be joining us soon." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "Thanks for playing." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "Goodbye." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "WAAAA-" ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "Failure1"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "Failure2"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "HoveredOnGoal"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "Intro"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "IntroContinued"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "Success"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachine" id=2]
+states/Failure1/node = SubResource( 20 )
+states/Failure1/position = Vector2( 823.409, 7 )
+states/Failure2/node = SubResource( 21 )
+states/Failure2/position = Vector2( 1026.41, 7 )
+states/HoveredOnGoal/node = SubResource( 9 )
+states/HoveredOnGoal/position = Vector2( 573, 7 )
+states/Intro/node = SubResource( 4 )
+states/Intro/position = Vector2( 290, 109 )
+states/IntroContinued/node = SubResource( 6 )
+states/IntroContinued/position = Vector2( 573, 109 )
+states/Success/node = SubResource( 16 )
+states/Success/position = Vector2( 1026.41, 109 )
+transitions = [ "Intro", "IntroContinued", SubResource( 7 ), "IntroContinued", "HoveredOnGoal", SubResource( 10 ), "IntroContinued", "Failure1", SubResource( 22 ), "HoveredOnGoal", "Failure1", SubResource( 23 ), "Failure1", "Failure2", SubResource( 24 ), "Failure2", "Success", SubResource( 25 ), "Failure1", "Success", SubResource( 26 ), "HoveredOnGoal", "Success", SubResource( 27 ), "IntroContinued", "Success", SubResource( 28 ) ]
+start_node = "Intro"
+graph_offset = Vector2( 285.409, -197.657 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=3]
+
+[node name="Level12" instance=ExtResource( 9 )]
+script = ExtResource( 1 )
+available_options = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 21 ), ExtResource( 12 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ) ]
+character_goal = ExtResource( 2 )
+
+[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
+margin_bottom = 406.0
+
+[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+margin_top = 410.0
+text = "What the creator thinks of themselves."
+values = [ 1, 1, 1, 1, 1, 12 ]
+text_values = [ "?", "?", "?", "?", "?", "?" ]
+
+[node name="SubmitButton" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel2/MarginContainer/HBoxContainer" index="0"]
+margin_right = 80.0
+
+[node name="SubmitButton2" type="Button" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel2/MarginContainer/HBoxContainer" index="1"]
+margin_left = 88.0
+margin_right = 168.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Submit"
+
+[node name="SubmitButton3" type="Button" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel2/MarginContainer/HBoxContainer" index="2"]
+margin_left = 176.0
+margin_right = 256.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Submit"
+
+[node name="AnimationPlayer" parent="." index="1"]
+anims/Failure1 = SubResource( 18 )
+anims/Failure2 = SubResource( 19 )
+anims/HoveredOnGoal = SubResource( 8 )
+anims/Intro = SubResource( 1 )
+anims/IntroContinued = SubResource( 5 )
+anims/Solved = SubResource( 11 )
+anims/Success = SubResource( 15 )
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource( 2 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 3 )
+
+[connection signal="mouse_entered" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/CharacterGoal" to="." method="_on_CharacterGoal_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel2/MarginContainer/HBoxContainer/SubmitButton2" to="." method="_on_SubmitButton_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel2/MarginContainer/HBoxContainer/SubmitButton3" to="." method="_on_SubmitButton_pressed"]

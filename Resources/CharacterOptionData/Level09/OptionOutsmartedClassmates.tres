@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
-text = "Some Agility"
-values = [ 0, 0, 1, 0 ]
-text_values = [ "", "", "", "" ]
+text = "Often outsmarted and played tricks on their slower classmates."
+values = [ 0, 1, 0, 0, 0, 0 ]
+text_values = [ "", "", "", "", "", "" ]

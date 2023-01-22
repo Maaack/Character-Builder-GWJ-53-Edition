@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource( 1 )
 text = "Learns words of wisdom from a witty butler."
-values = [ 0, 1, 0, 0, 0 ]
-text_values = [ "", "", "", "", "" ]
+values = [ 0, 1, 0, 0, 0, 0 ]
+text_values = [ "", "", "", "", "", "" ]

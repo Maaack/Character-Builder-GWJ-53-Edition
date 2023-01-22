@@ -88,3 +88,9 @@ func _on_Button_mouse_entered():
 
 func _on_Button_mouse_exited():
 	emit_signal("hovered_off")
+
+func _on_DescriptiveText_resized():
+	var text_label = get_node_or_null("%DescriptiveText")
+	if text_label == null:
+		return
+	rect_min_size.y = text_label.rect_size.y + 88

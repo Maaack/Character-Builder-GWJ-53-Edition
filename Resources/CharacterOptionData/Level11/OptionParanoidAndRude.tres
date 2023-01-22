@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
-text = "Sadness"
-values = [ 0, 0, 0, 2, 0 ]
-text_values = [ "", "", "", "", "" ]
+text = "Impatient and paranoid of other people."
+values = [ 0, 0, 0, 0, 0, 1 ]
+text_values = [ "", "", "", "", "", "" ]

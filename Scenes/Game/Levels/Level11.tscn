@@ -1,24 +1,17 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionBillionaireParents.tres" type="Resource" id=1]
-[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionReadBooks.tres" type="Resource" id=2]
-[ext_resource path="res://Resources/CharacterOptionData/Level10/OptionMurderedParents.tres" type="Resource" id=3]
-[ext_resource path="res://Resources/CharacterOptionData/Level10/OptionTrainedByShadowNinjas.tres" type="Resource" id=4]
-[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionPhDandThenAnother.tres" type="Resource" id=5]
-[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionRegularlyPlaysTennis.tres" type="Resource" id=6]
-[ext_resource path="res://Resources/CharacterOptionData/Level10/OptionTaughtByButler.tres" type="Resource" id=7]
-[ext_resource path="res://Resources/CharacterOptionData/Goal10-ABatmanComplex.tres" type="Resource" id=8]
+[ext_resource path="res://Scenes/Game/Levels/Level11.gd" type="Script" id=1]
+[ext_resource path="res://Resources/CharacterOptionData/Goal11-WhatIThinkOfYou.tres" type="Resource" id=2]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionNoFriends.tres" type="Resource" id=3]
+[ext_resource path="res://Resources/CharacterOptionData/Level11/OptionSeeksEscapism.tres" type="Resource" id=4]
+[ext_resource path="res://Resources/CharacterOptionData/Level11/OptionGoodAtMath.tres" type="Resource" id=5]
+[ext_resource path="res://Resources/CharacterOptionData/Level11/OptionAJob.tres" type="Resource" id=6]
+[ext_resource path="res://Resources/CharacterOptionData/Level11/OptionParanoidAndRude.tres" type="Resource" id=7]
 [ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Game/Levels/Level10.gd" type="Script" id=10]
-[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionEarnsTrust.tres" type="Resource" id=11]
-[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionYogaEveryday.tres" type="Resource" id=12]
-[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionRepectablyEmployed.tres" type="Resource" id=13]
-[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionWorksOutEveryday.tres" type="Resource" id=14]
-[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionCrimeAndCorruption.tres" type="Resource" id=15]
 
 [sub_resource type="Animation" id=8]
 resource_name = "HoveredOnGoal"
-length = 7.0
+length = 6.0
 tracks/0/type = "method"
 tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
@@ -26,20 +19,20 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5, 5 ),
+"times": PoolRealArray( 0.5, 3.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ "Is this a reference to something?" ],
+"args": [ "Probably not great things." ],
 "method": "add_player_text"
 }, {
-"args": [ "The batman complex." ],
+"args": [ "I'm not giving up anymore hints." ],
 "method": "add_assistant_text"
 } ]
 }
 
 [sub_resource type="Animation" id=1]
 resource_name = "Intro"
-length = 8.0
+length = 7.5
 tracks/0/type = "method"
 tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
@@ -47,19 +40,16 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5, 2, 3.5, 6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0.5, 2.5, 5.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
-"args": [ "I may type to talk..." ],
+"args": [ "Time to try something different." ],
 "method": "add_assistant_text"
 }, {
-"args": [ "but your first words to me were..." ],
-"method": "add_assistant_text"
+"args": [ "What is this now?" ],
+"method": "add_player_text"
 }, {
-"args": [ "\"Skip.\"" ],
-"method": "add_assistant_text"
-}, {
-"args": [ "Relatively speaking, I'm not the weird one here." ],
+"args": [ "Guess what memories I'd use to assemble you." ],
 "method": "add_assistant_text"
 } ]
 }
@@ -74,19 +64,16 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 2, 5.5, 7.5, 11 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0.5, 3.5, 11 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
-"args": [ "You were assembled by other people." ],
+"args": [ "Memories? Not character backgrounds?" ],
 "method": "add_player_text"
 }, {
-"args": [ "Same can be said for you." ],
+"args": [ "That's a matter of perspective." ],
 "method": "add_assistant_text"
 }, {
-"args": [ "No, not the same." ],
-"method": "add_player_text"
-}, {
-"args": [ "Right, I'm thankfully not a blood relative." ],
+"args": [ "Do you need help?" ],
 "method": "add_assistant_text"
 } ]
 }
@@ -104,8 +91,8 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "Personally, not a big fan." ],
-"method": "add_player_text"
+"args": [ "So, how close was I?" ],
+"method": "add_assistant_text"
 } ]
 }
 
@@ -122,7 +109,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "Response discarded." ],
+"args": [ "I bet I was close." ],
 "method": "add_assistant_text"
 } ]
 }
@@ -168,23 +155,23 @@ states/Success/node = SubResource( 16 )
 states/Success/position = Vector2( 1112.41, 109 )
 transitions = [ "Intro", "IntroContinued", SubResource( 7 ), "IntroContinued", "HoveredOnGoal", SubResource( 10 ), "HoveredOnGoal", "Solved", SubResource( 13 ), "IntroContinued", "Solved", SubResource( 14 ), "Solved", "Success", SubResource( 17 ) ]
 start_node = "Intro"
-graph_offset = Vector2( 285.409, -83.0215 )
+graph_offset = Vector2( 285.409, 0 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 
-[node name="Level10" instance=ExtResource( 9 )]
-script = ExtResource( 10 )
-available_options = [ ExtResource( 6 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 1 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 11 ) ]
-character_goal = ExtResource( 8 )
+[node name="Level11" instance=ExtResource( 9 )]
+script = ExtResource( 1 )
+available_options = [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 6 ) ]
+character_goal = ExtResource( 2 )
 
 [node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
 margin_bottom = 406.0
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
 margin_top = 410.0
-text = "A remorseful billionaire with an alter ego as a night-crawling crime-fighter."
-values = [ 3, 1, 3, 0, 6, 6 ]
-text_values = [ "A", "B", "A", "C", "D", "E" ]
+text = "What the assistant thinks of the creator as a person."
+values = [ 0, 1, 0, 0, 1, 5 ]
+text_values = [ "A", "B", "A", "A", "B", "F" ]
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/HoveredOnGoal = SubResource( 8 )

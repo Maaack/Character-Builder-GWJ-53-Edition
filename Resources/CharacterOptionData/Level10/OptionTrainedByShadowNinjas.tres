@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
-text = "Some Strength"
-values = [ 1, 0, 0, 0, 0 ]
-text_values = [ "", "", "", "", "" ]
+text = "Trained by shadow ninjas."
+values = [ 3, 0, 3, 0, 0, 0 ]
+text_values = [ "", "", "", "", "", "" ]

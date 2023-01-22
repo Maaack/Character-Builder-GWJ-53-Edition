@@ -6,7 +6,7 @@
 [node name="CharacterOption" type="Control"]
 margin_right = 230.0
 margin_bottom = 100.0
-rect_min_size = Vector2( 230, 100 )
+rect_min_size = Vector2( 230, 102 )
 size_flags_horizontal = 3
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
@@ -17,7 +17,7 @@ anchor_bottom = 1.0
 
 [node name="Button" type="Button" parent="MarginContainer"]
 margin_right = 230.0
-margin_bottom = 100.0
+margin_bottom = 102.0
 rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -37,7 +37,7 @@ custom_constants/margin_bottom = 4
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 226.0
-margin_bottom = 96.0
+margin_bottom = 98.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -46,32 +46,31 @@ alignment = 1
 unique_name_in_owner = true
 visible = false
 margin_right = 222.0
-margin_bottom = 28.0
+margin_bottom = 30.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 12
-custom_constants/margin_top = 4
+custom_constants/margin_top = 8
 custom_constants/margin_left = 12
-custom_constants/margin_bottom = 4
+custom_constants/margin_bottom = 8
 
 [node name="DescriptiveText" type="Label" parent="MarginContainer/Button/MarginContainer/VBoxContainer/TextContainer"]
 unique_name_in_owner = true
 margin_left = 12.0
-margin_top = 4.0
+margin_top = 8.0
 margin_right = 210.0
-margin_bottom = 24.0
+margin_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 valign = 1
 autowrap = true
-clip_text = true
 
 [node name="Control" type="Control" parent="MarginContainer/Button/MarginContainer/VBoxContainer"]
-margin_top = 16.0
+margin_top = 17.0
 margin_right = 222.0
-margin_bottom = 76.0
+margin_bottom = 77.0
 rect_min_size = Vector2( 0, 60 )
 mouse_filter = 2
 size_flags_horizontal = 3
@@ -112,3 +111,4 @@ custom_constants/separation = 4
 [connection signal="mouse_entered" from="MarginContainer/Button" to="." method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/Button" to="." method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="MarginContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="resized" from="MarginContainer/Button/MarginContainer/VBoxContainer/TextContainer/DescriptiveText" to="." method="_on_DescriptiveText_resized"]
