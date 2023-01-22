@@ -1,17 +1,20 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Resources/CharacterOptionData/Goal05-ASadMagician.tres" type="Resource" id=2]
-[ext_resource path="res://Resources/CharacterOptionData/OptionSomeSadness-0001.tres" type="Resource" id=3]
-[ext_resource path="res://Resources/CharacterOptionData/OptionMoreSadness-0003.tres" type="Resource" id=4]
-[ext_resource path="res://Resources/CharacterOptionData/OptionSomeWisdom-0100.tres" type="Resource" id=5]
-[ext_resource path="res://Resources/CharacterOptionData/OptionSomeStrength-1000.tres" type="Resource" id=6]
-[ext_resource path="res://Resources/CharacterOptionData/OptionSadness-0002.tres" type="Resource" id=7]
-[ext_resource path="res://Resources/CharacterOptionData/OptionSomeAgility-0010.tres" type="Resource" id=8]
-[ext_resource path="res://Scenes/Game/Levels/Level05.gd" type="Script" id=9]
+[ext_resource path="res://Resources/CharacterOptionData/Goal05-ACharismaticBard.tres" type="Resource" id=2]
+[ext_resource path="res://Resources/CharacterOptionData/Level05/OptionSomeCharisma-0001.tres" type="Resource" id=3]
+[ext_resource path="res://Scenes/Game/Levels/Level05.gd" type="Script" id=4]
+[ext_resource path="res://Resources/CharacterOptionData/Level05/OptionWisdom-0200.tres" type="Resource" id=5]
+[ext_resource path="res://Resources/CharacterOptionData/Level05/OptionSomeWisdom-0100.tres" type="Resource" id=6]
+[ext_resource path="res://Resources/CharacterOptionData/Level05/OptionSomeAgility-0010.tres" type="Resource" id=7]
+[ext_resource path="res://Resources/CharacterOptionData/Level05/OptionCharisma-0002.tres" type="Resource" id=8]
+[ext_resource path="res://Resources/CharacterOptionData/Level05/OptionSomeStrength-1000.tres" type="Resource" id=9]
+[ext_resource path="res://Resources/CharacterOptionData/Level05/OptionAgility-0020.tres" type="Resource" id=10]
+[ext_resource path="res://Resources/CharacterOptionData/Level05/OptionMoreCharisma-0003.tres" type="Resource" id=11]
+[ext_resource path="res://Resources/CharacterOptionData/Level05/OptionStrength-2000.tres" type="Resource" id=12]
 
 [sub_resource type="Animation" id=12]
-resource_name = "HoveredOnSadness"
+resource_name = "HoveredOnCharisma"
 length = 2.0
 tracks/0/type = "method"
 tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
@@ -23,14 +26,14 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "This suddenly took a turn." ],
+"args": [ "Adding charisma now?" ],
 "method": "add_player_text"
 } ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "Intro"
-length = 4.0
+[sub_resource type="Animation" id=20]
+resource_name = "HoveredOnGoal"
+length = 3.5
 tracks/0/type = "method"
 tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
@@ -38,9 +41,33 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1, 2, 3.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0.2, 1.6 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [ "Oooo..." ],
+"method": "add_player_text"
+}, {
+"args": [ "A new hidden stat." ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Intro"
+length = 8.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 2, 3.9, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "I hate the new look." ],
+"method": "add_player_text"
+}, {
 "args": [ "We'd like to remind you that all activity is recorded." ],
 "method": "add_assistant_text"
 }, {
@@ -54,7 +81,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "IntroContinued"
-length = 12.0
+length = 15.0
 tracks/0/type = "method"
 tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
@@ -62,14 +89,17 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 5, 10.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 3, 10.1, 14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
-"args": [ "To train your Assistant chatbot?" ],
+"args": [ "To improve your dumb chatbot Assistant?" ],
 "method": "add_player_text"
 }, {
 "args": [ "Train on my character building genius." ],
 "method": "add_player_text"
+}, {
+"args": [ "..." ],
+"method": "add_assistant_text"
 } ]
 }
 
@@ -102,13 +132,16 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "So sadness is a stat?" ],
+"args": [ "Next up, another stat?" ],
 "method": "add_player_text"
 } ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=13]
-animation = "HoveredOnSadness"
+animation = "HoveredOnCharisma"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "HoveredOnGoal"
 
 [sub_resource type="AnimationNodeAnimation" id=4]
 animation = "Intro"
@@ -140,9 +173,22 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id=19]
 switch_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
 [sub_resource type="AnimationNodeStateMachine" id=10]
-states/HoveredOnSadness/node = SubResource( 13 )
-states/HoveredOnSadness/position = Vector2( 344, -32 )
+states/HoveredOnCharisma/node = SubResource( 13 )
+states/HoveredOnCharisma/position = Vector2( 344, -32 )
+states/HoveredOnGoal/node = SubResource( 21 )
+states/HoveredOnGoal/position = Vector2( 595, -32 )
 states/Intro/node = SubResource( 4 )
 states/Intro/position = Vector2( 118, 67 )
 states/IntroContinued/node = SubResource( 5 )
@@ -151,25 +197,30 @@ states/Solved/node = SubResource( 6 )
 states/Solved/position = Vector2( 617, 67 )
 states/Success/node = SubResource( 18 )
 states/Success/position = Vector2( 885, 67.924 )
-transitions = [ "Intro", "IntroContinued", SubResource( 7 ), "Intro", "Solved", SubResource( 8 ), "IntroContinued", "Solved", SubResource( 9 ), "Intro", "HoveredOnSadness", SubResource( 14 ), "IntroContinued", "HoveredOnSadness", SubResource( 15 ), "HoveredOnSadness", "Solved", SubResource( 16 ), "Solved", "Success", SubResource( 19 ) ]
+transitions = [ "Intro", "IntroContinued", SubResource( 7 ), "Intro", "Solved", SubResource( 8 ), "IntroContinued", "Solved", SubResource( 9 ), "Intro", "HoveredOnCharisma", SubResource( 14 ), "IntroContinued", "HoveredOnCharisma", SubResource( 15 ), "HoveredOnCharisma", "Solved", SubResource( 16 ), "Solved", "Success", SubResource( 19 ), "Intro", "HoveredOnGoal", SubResource( 22 ), "HoveredOnCharisma", "HoveredOnGoal", SubResource( 23 ), "HoveredOnGoal", "HoveredOnCharisma", SubResource( 24 ), "IntroContinued", "HoveredOnGoal", SubResource( 25 ), "HoveredOnGoal", "Solved", SubResource( 26 ) ]
 start_node = "Intro"
-end_node = "Solved"
+end_node = "Success"
 graph_offset = Vector2( 0, -62.076 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=11]
 
 [node name="Level05" instance=ExtResource( 1 )]
-script = ExtResource( 9 )
-available_options = [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 4 ) ]
+script = ExtResource( 4 )
+available_options = [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 11 ) ]
 character_goal = ExtResource( 2 )
 
+[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
+margin_bottom = 406.0
+
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
-text = "A street-magician with a deep sadness."
-values = [ 0, 1, 1, 4 ]
+margin_top = 410.0
+text = "A fairly charismatic bard talented with multiple instruments."
+values = [ 0, 1, 2, 3 ]
 text_values = [ "", "", "", "?" ]
 
 [node name="AnimationPlayer" parent="." index="1"]
-anims/HoveredOnSadness = SubResource( 12 )
+anims/HoveredOnCharisma = SubResource( 12 )
+anims/HoveredOnGoal = SubResource( 20 )
 anims/Intro = SubResource( 1 )
 anims/IntroContinued = SubResource( 2 )
 anims/Solved = SubResource( 17 )
@@ -180,3 +231,5 @@ tree_root = SubResource( 10 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 11 )
+
+[connection signal="mouse_entered" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/CharacterGoal" to="." method="_on_CharacterGoal_mouse_entered"]

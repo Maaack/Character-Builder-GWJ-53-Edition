@@ -3,7 +3,6 @@ extends BaseLevel
 
 onready var animation_state_machine = $AnimationTree["parameters/playback"]
 
-var hovered_on_sadness = false
 var hovered_on_goal = false
 var goal_reached = false
 var succeeded = false

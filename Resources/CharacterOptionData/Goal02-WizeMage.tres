@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
-text = "A wize mage."
+text = "A very wize mage."
 values = [ 0, 4, 0 ]
 text_values = [ "", "", "", "" ]

@@ -10,16 +10,18 @@ size_flags_horizontal = 3
 script = ExtResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = 32.0
-margin_top = 6.0
-margin_right = 80.0
-margin_bottom = 54.0
-rect_min_size = Vector2( 48, 48 )
+margin_left = 36.0
+margin_top = 10.0
+margin_right = 76.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 40, 40 )
 mouse_filter = 1
 
 [node name="Label" type="Label" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "0"
 align = 1
 valign = 1

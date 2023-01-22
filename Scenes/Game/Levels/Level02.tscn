@@ -1,15 +1,15 @@
 [gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Resources/CharacterOptionData/Option111.tres" type="Resource" id=2]
+[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option111.tres" type="Resource" id=2]
 [ext_resource path="res://Resources/CharacterOptionData/Goal02-WizeMage.tres" type="Resource" id=3]
-[ext_resource path="res://Resources/CharacterOptionData/Option010.tres" type="Resource" id=4]
-[ext_resource path="res://Resources/CharacterOptionData/Option100.tres" type="Resource" id=5]
-[ext_resource path="res://Resources/CharacterOptionData/Option300.tres" type="Resource" id=6]
-[ext_resource path="res://Resources/CharacterOptionData/Option030.tres" type="Resource" id=7]
+[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option010.tres" type="Resource" id=4]
+[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option100.tres" type="Resource" id=5]
+[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option300.tres" type="Resource" id=6]
+[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option030.tres" type="Resource" id=7]
 [ext_resource path="res://Scenes/Game/Levels/Level02.gd" type="Script" id=8]
-[ext_resource path="res://Resources/CharacterOptionData/Option001.tres" type="Resource" id=9]
-[ext_resource path="res://Resources/CharacterOptionData/Option003.tres" type="Resource" id=10]
+[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option001.tres" type="Resource" id=9]
+[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option003.tres" type="Resource" id=10]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Level02-Hovered"
@@ -162,6 +162,10 @@ character_goal = ExtResource( 3 )
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
 text = "A wize mage."
 values = [ 0, 4, 0 ]
+
+[node name="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer" index="0"]
+margin_right = 174.0
+margin_bottom = 24.0
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/Level02-Hovered = SubResource( 2 )

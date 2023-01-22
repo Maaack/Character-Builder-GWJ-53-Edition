@@ -1,10 +1,10 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Resources/CharacterOptionData/Option111.tres" type="Resource" id=2]
-[ext_resource path="res://Resources/CharacterOptionData/Option400.tres" type="Resource" id=3]
-[ext_resource path="res://Resources/CharacterOptionData/Option040.tres" type="Resource" id=4]
-[ext_resource path="res://Resources/CharacterOptionData/Option004.tres" type="Resource" id=5]
+[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option111.tres" type="Resource" id=2]
+[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option400.tres" type="Resource" id=3]
+[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option040.tres" type="Resource" id=4]
+[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option004.tres" type="Resource" id=5]
 [ext_resource path="res://Scenes/Game/LevelAnimations/Level01-Intro.tres" type="Animation" id=6]
 [ext_resource path="res://Scenes/Game/Levels/Level01.gd" type="Script" id=7]
 [ext_resource path="res://Resources/CharacterOptionData/Goal01-StrongFighter.tres" type="Resource" id=8]
@@ -40,7 +40,11 @@ script = ExtResource( 7 )
 available_options = [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ]
 character_goal = ExtResource( 8 )
 
+[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
+margin_bottom = 406.0
+
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+margin_top = 410.0
 values = [ 4, 0, 0 ]
 
 [node name="AnimationPlayer" parent="." index="1"]

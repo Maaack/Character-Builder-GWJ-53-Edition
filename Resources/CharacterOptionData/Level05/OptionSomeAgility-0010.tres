@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
-text = ""
-values = [ 1, 0, 0, 1 ]
+text = "Some Agility"
+values = [ 0, 0, 1, 0 ]
+text_values = [ "", "", "", "" ]

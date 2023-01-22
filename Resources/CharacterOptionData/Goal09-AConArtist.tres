@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
-text = "A very agile rogue."
-values = [ 0, 0, 4 ]
-text_values = [ "", "", "", "" ]
+text = "A con-artist who has unpaid debts to a loan shark."
+values = [ 0, 1, 0, 3, -1, 4 ]
+text_values = [ "A", "B", "A", "C", "-(B)", "D" ]

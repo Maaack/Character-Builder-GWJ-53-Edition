@@ -30,10 +30,17 @@ func _display_values():
 
 
 func _display_text():
-	var text_container = get_node_or_null("%DescriptiveText")
+	var text_label = get_node_or_null("%DescriptiveText")
+	if text_label == null:
+		return
+	text_label.text = text
+	var text_container = get_node_or_null("%TextContainer")
 	if text_container == null:
 		return
-	text_container.text = text
+	if text_label.text == "":
+		text_container.hide()
+	else:
+		text_container.show()
 
 func set_values(new_values):
 	values = new_values

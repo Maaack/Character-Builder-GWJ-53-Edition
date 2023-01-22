@@ -49,10 +49,20 @@ func _display_values():
 		i += 1
 
 func _display_text():
-	var text_container = get_node_or_null("%DescriptiveText")
-	if text_container == null:
+	var text_label = get_node_or_null("%DescriptiveText")
+	if text_label == null:
 		return
-	text_container.text = text
+	text_label.text = text
+	var text_container = get_node_or_null("%TextContainer")
+	var values_background = get_node_or_null("%ValuesBackground")
+	if text_container == null or values_background == null:
+		return
+	if text_label.text == "":
+		text_container.hide()
+		values_background.hide()
+	else:
+		text_container.show()
+		values_background.show()
 
 func set_values(new_values):
 	values = new_values

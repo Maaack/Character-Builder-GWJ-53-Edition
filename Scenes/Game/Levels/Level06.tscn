@@ -1,20 +1,192 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Resources/CharacterOptionData/Goal06-AGreedyRichman.tres" type="Resource" id=2]
-[ext_resource path="res://Resources/CharacterOptionData/OptionSomeStrength-10000.tres" type="Resource" id=3]
-[ext_resource path="res://Resources/CharacterOptionData/OptionSomeWisdom-01000.tres" type="Resource" id=4]
-[ext_resource path="res://Resources/CharacterOptionData/OptionMoreSadness-00030.tres" type="Resource" id=5]
-[ext_resource path="res://Resources/CharacterOptionData/OptionMoreMoney-00003.tres" type="Resource" id=6]
-[ext_resource path="res://Resources/CharacterOptionData/OptionSomeAgility-00100.tres" type="Resource" id=7]
-[ext_resource path="res://Scenes/Game/Levels/Level06.gd" type="Script" id=9]
+[ext_resource path="res://Resources/CharacterOptionData/Level06/OptionSomeAgility-00100.tres" type="Resource" id=2]
+[ext_resource path="res://Resources/CharacterOptionData/Level06/OptionSomeWisdom-01000.tres" type="Resource" id=3]
+[ext_resource path="res://Scenes/Game/Levels/Level06.gd" type="Script" id=4]
+[ext_resource path="res://Resources/CharacterOptionData/Level06/OptionSomeStrength-10000.tres" type="Resource" id=5]
+[ext_resource path="res://Resources/CharacterOptionData/Level06/OptionStrength-20000.tres" type="Resource" id=6]
+[ext_resource path="res://Resources/CharacterOptionData/Goal06-EngineerSavingUp.tres" type="Resource" id=7]
+[ext_resource path="res://Resources/CharacterOptionData/Level06/OptionWisdom-02000.tres" type="Resource" id=8]
+[ext_resource path="res://Resources/CharacterOptionData/Level06/OptionSomeCharisma-00010.tres" type="Resource" id=9]
+[ext_resource path="res://Resources/CharacterOptionData/Level06/OptionSomeMoney-00001.tres" type="Resource" id=10]
+[ext_resource path="res://Resources/CharacterOptionData/Level06/OptionAgility-00200.tres" type="Resource" id=11]
+[ext_resource path="res://Resources/CharacterOptionData/Level06/OptionCharisma-00020.tres" type="Resource" id=12]
+[ext_resource path="res://Resources/CharacterOptionData/Level06/OptionMoney-00002.tres" type="Resource" id=13]
+
+[sub_resource type="Animation" id=12]
+resource_name = "HoveredOnGoal"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "I sense a drift in the theme." ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Intro"
+length = 4.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 2.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "Congratulations on making it this far." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "Whatever." ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "IntroContinued"
+length = 10.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.5, 5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ "Oh look, another stat." ],
+"method": "add_player_text"
+}, {
+"args": [ "We will continue to ramp up the difficulty." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "This isn't hard." ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "Solved"
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "And no charisma." ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Success"
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Have a good life." ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "HoveredOnGoal"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "Intro"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "IntroContinued"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Solved"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "Success"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=10]
+states/HoveredOnGoal/node = SubResource( 13 )
+states/HoveredOnGoal/position = Vector2( 344, -32 )
+states/Intro/node = SubResource( 4 )
+states/Intro/position = Vector2( 118, 67 )
+states/IntroContinued/node = SubResource( 5 )
+states/IntroContinued/position = Vector2( 344, 179 )
+states/Solved/node = SubResource( 6 )
+states/Solved/position = Vector2( 617, 67 )
+states/Success/node = SubResource( 18 )
+states/Success/position = Vector2( 885, 67 )
+transitions = [ "Intro", "IntroContinued", SubResource( 7 ), "Intro", "Solved", SubResource( 8 ), "IntroContinued", "Solved", SubResource( 9 ), "Intro", "HoveredOnGoal", SubResource( 14 ), "IntroContinued", "HoveredOnGoal", SubResource( 15 ), "HoveredOnGoal", "Solved", SubResource( 16 ), "Solved", "Success", SubResource( 19 ) ]
+start_node = "Intro"
+end_node = "Success"
+graph_offset = Vector2( 0, -62.076 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=11]
 
 [node name="Level06" instance=ExtResource( 1 )]
-script = ExtResource( 9 )
-available_options = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ) ]
-character_goal = ExtResource( 2 )
+script = ExtResource( 4 )
+available_options = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 13 ) ]
+character_goal = ExtResource( 7 )
+
+[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
+margin_bottom = 406.0
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
-text = "A filthy-rich, greedy, tax-evading, billionaire."
-values = [ 0, 0, 0, 3, 6 ]
+margin_top = 410.0
+text = "An engineer building a respectable savings to eventually escape society."
+values = [ 0, 2, 0, 0, 3 ]
 text_values = [ "", "", "", "?", "?" ]
+
+[node name="AnimationPlayer" parent="." index="1"]
+anims/HoveredOnGoal = SubResource( 12 )
+anims/Intro = SubResource( 1 )
+anims/IntroContinued = SubResource( 2 )
+anims/Solved = SubResource( 17 )
+anims/Success = SubResource( 3 )
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource( 10 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 11 )
+
+[connection signal="mouse_entered" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/CharacterGoal" to="." method="_on_CharacterGoal_mouse_entered"]

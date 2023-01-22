@@ -4,59 +4,89 @@
 [ext_resource path="res://Scenes/CharacterOptions/CharacterGoal.gd" type="Script" id=2]
 
 [node name="CharacterGoal" type="Control"]
-margin_bottom = 180.0
-rect_min_size = Vector2( 230, 180 )
+margin_right = 230.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 230, 158 )
 size_flags_horizontal = 3
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
+text = "Some text goes here"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
 margin_right = 230.0
-margin_bottom = 180.0
-rect_min_size = Vector2( 0, 100 )
+margin_bottom = 158.0
+mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 226.0
+margin_bottom = 153.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer"]
-margin_right = 230.0
-margin_bottom = 116.0
+[node name="TextContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_right = 222.0
+margin_bottom = 85.0
+rect_min_size = Vector2( 0, 48 )
 mouse_filter = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 12
-custom_constants/margin_top = 4
 custom_constants/margin_left = 12
-custom_constants/margin_bottom = 4
 
-[node name="DescriptiveText" type="Label" parent="MarginContainer/Panel/VBoxContainer/MarginContainer"]
+[node name="DescriptiveText" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TextContainer"]
 unique_name_in_owner = true
 margin_left = 12.0
-margin_top = 4.0
-margin_right = 218.0
-margin_bottom = 112.0
+margin_right = 210.0
+margin_bottom = 85.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
+text = "Some text goes here
+Some text goes here
+Some text goes here
+Some text goes here
+Some text goes here"
 align = 1
 valign = 1
 autowrap = true
 clip_text = true
 
-[node name="Panel" type="Panel" parent="MarginContainer/Panel/VBoxContainer"]
-margin_top = 120.0
-margin_right = 230.0
-margin_bottom = 180.0
+[node name="ValuesPanel" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+margin_top = 89.0
+margin_right = 222.0
+margin_bottom = 149.0
 rect_min_size = Vector2( 0, 60 )
 mouse_filter = 2
+size_flags_horizontal = 3
 
-[node name="ValuesContainer" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer/Panel"]
-unique_name_in_owner = true
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ValuesPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 4
+custom_constants/margin_left = 4
+
+[node name="ValuesContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ValuesPanel/MarginContainer"]
+unique_name_in_owner = true
+margin_left = 4.0
+margin_right = 218.0
+margin_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/separation = 4

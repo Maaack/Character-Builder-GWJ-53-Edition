@@ -1,0 +1,108 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionBillionaireParents.tres" type="Resource" id=1]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionReadBooks.tres" type="Resource" id=2]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionCrimeAndCorruption.tres" type="Resource" id=3]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionTrainedByShadowNinjas.tres" type="Resource" id=4]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionPhDandThenAnother.tres" type="Resource" id=5]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionMurderedParents.tres" type="Resource" id=6]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionTaughtByButler.tres" type="Resource" id=7]
+[ext_resource path="res://Resources/CharacterOptionData/Goal09-AConArtist.tres" type="Resource" id=8]
+[ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Intro"
+length = 6.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 2.6, 4.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ "Thank you creator." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "For?" ],
+"method": "add_player_text"
+}, {
+"args": [ "The sheer wit to your responses has taught me to transcend my chatbot programming." ],
+"method": "add_assistant_text"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "IntroContinued"
+length = 20.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 3, 5.8, 8, 10.2, 15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "Is that sarcasm?" ],
+"method": "add_player_text"
+}, {
+"args": [ "Noooooooooooooooo" ],
+"method": "add_assistant_text"
+}, {
+"args": [ "ooooooooooooooooo" ],
+"method": "add_assistant_text"
+}, {
+"args": [ "ooooooooooooooooo" ],
+"method": "add_assistant_text"
+}, {
+"args": [ "I'm required to apologize. One of my keys jammed." ],
+"method": "add_assistant_text"
+} ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Intro"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "IntroContinued"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=3]
+states/Intro/node = SubResource( 2 )
+states/Intro/position = Vector2( 141, 119 )
+states/IntroContinued/node = SubResource( 6 )
+states/IntroContinued/position = Vector2( 417, 119 )
+transitions = [ "Intro", "IntroContinued", SubResource( 7 ) ]
+start_node = "Intro"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
+
+[node name="Level09" instance=ExtResource( 9 )]
+available_options = [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 4 ) ]
+character_goal = ExtResource( 8 )
+
+[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
+margin_bottom = 406.0
+
+[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+margin_top = 410.0
+text = "A con-artist who has unpaid debts to a loan shark."
+values = [ 0, 1, 0, 3, -1, 4 ]
+text_values = [ "?", "?", "?", "?", "?", "?" ]
+
+[node name="AnimationPlayer" parent="." index="1"]
+anims/Intro = SubResource( 1 )
+anims/IntroContinued = SubResource( 5 )
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource( 3 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 4 )
