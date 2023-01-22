@@ -27,14 +27,11 @@ func _on_OptionsBtn_pressed():
 func _on_MainMenuBtn_pressed():
 	$Control/ConfirmMainMenu.popup_centered()
 
-
 func _on_ExitBtn_pressed():
 	$Control/ConfirmExit.popup_centered()
 
-
 func _on_ConfirmRestart_confirmed():
 	SceneLoader.reload_current_scene()
-
 
 func _on_ConfirmMainMenu_confirmed():
 	InGameMenuController.close_menu()
@@ -43,3 +40,7 @@ func _on_ConfirmMainMenu_confirmed():
 
 func _on_ConfirmExit_confirmed():
 	get_tree().quit()
+
+func _ready():
+	if OS.has_feature("web"):
+		$Control/ButtonsContainer/ExitBtn.hide()
