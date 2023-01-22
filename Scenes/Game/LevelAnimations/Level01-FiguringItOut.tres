@@ -2,7 +2,7 @@
 
 [resource]
 resource_name = "Level01-FiguringItOut"
-length = 1.5
+length = 5.0
 tracks/0/type = "method"
 tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
@@ -10,10 +10,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 3 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "Is this just a matching game?" ],
+"args": [ "But not these." ],
 "method": "add_player_text"
 } ]
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option111.tres" type="Resource" id=2]
@@ -28,7 +28,25 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "And I click submit. Easy." ],
+"args": [ "And then I click submit." ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Level01-Success"
+length = 1.5
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Is this just a matching game?" ],
 "method": "add_player_text"
 } ]
 }
@@ -54,6 +72,7 @@ anims/Level01-FiguringItOut = ExtResource( 12 )
 anims/Level01-Hovered = ExtResource( 10 )
 anims/Level01-Intro = ExtResource( 6 )
 anims/Level01-IntroContinued = ExtResource( 14 )
+anims/Level01-Success = SubResource( 3 )
 anims/Level01-Thinking = ExtResource( 11 )
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]

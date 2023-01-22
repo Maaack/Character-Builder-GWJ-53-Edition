@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
-text = "An engineer building a respectable savings to eventually escape society."
+text = "An engineer with a very respectable savings built up to eventually escape society."
 values = [ 0, 2, 0, 0, 3 ]
 text_values = [ "", "", "", "?", "?" ]

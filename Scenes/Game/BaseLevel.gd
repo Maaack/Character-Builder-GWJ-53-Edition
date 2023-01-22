@@ -28,10 +28,10 @@ func _display_available_options():
 	for available_option in available_options:
 		if available_option is OptionData:
 			var character_option_instance = character_option_scene.instance()
+			available_options_container.get_container().add_child(character_option_instance)
 			character_option_instance.values = available_option.values
 			character_option_instance.text = available_option.text
 			character_option_instance.text_values = available_option.text_values
-			available_options_container.get_container().add_child(character_option_instance)
 			character_option_instance.connect("selected", self, "_option_selected", [character_option_instance])
 			character_option_instance.connect("hovered_on", self, "_option_hovered_on", [character_option_instance])
 			character_option_instance.connect("hovered_off", self, "_option_hovered_off", [character_option_instance])

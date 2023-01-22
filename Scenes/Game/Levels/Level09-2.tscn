@@ -1,0 +1,208 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionBillionaireParents.tres" type="Resource" id=1]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionReadBooks.tres" type="Resource" id=2]
+[ext_resource path="res://Resources/CharacterOptionData/Level10/OptionMurderedParents.tres" type="Resource" id=3]
+[ext_resource path="res://Resources/CharacterOptionData/Level10/OptionTrainedByShadowNinjas.tres" type="Resource" id=4]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionPhDandThenAnother.tres" type="Resource" id=5]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionRegularlyPlaysTennis.tres" type="Resource" id=6]
+[ext_resource path="res://Resources/CharacterOptionData/Level10/OptionTaughtByButler.tres" type="Resource" id=7]
+[ext_resource path="res://Resources/CharacterOptionData/Goal10-ABatmanComplex.tres" type="Resource" id=8]
+[ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Game/Levels/Level10.gd" type="Script" id=10]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionEarnsTrust.tres" type="Resource" id=11]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionYogaEveryday.tres" type="Resource" id=12]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionRepectablyEmployed.tres" type="Resource" id=13]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionWorksOutEveryday.tres" type="Resource" id=14]
+[ext_resource path="res://Resources/CharacterOptionData/Level09/OptionCrimeAndCorruption.tres" type="Resource" id=15]
+
+[sub_resource type="Animation" id=8]
+resource_name = "HoveredOnGoal"
+length = 14.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 4, 9, 13 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "Is this a reference to something?" ],
+"method": "add_player_text"
+}, {
+"args": [ "The batman complex." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "Personally, not a fan." ],
+"method": "add_player_text"
+}, {
+"args": [ "Response discarded." ],
+"method": "add_assistant_text"
+} ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Intro"
+length = 6.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 3, 4.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ "Thank you creator." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "For?" ],
+"method": "add_player_text"
+}, {
+"args": [ "The sheer wit to your responses has taught me to transcend my chatbot programming." ],
+"method": "add_assistant_text"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "IntroContinued"
+length = 18.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 3, 5.8, 8, 10.2, 15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "Is that sarcasm?" ],
+"method": "add_player_text"
+}, {
+"args": [ "Noooooooooooooooo" ],
+"method": "add_assistant_text"
+}, {
+"args": [ "ooooooooooooooooo" ],
+"method": "add_assistant_text"
+}, {
+"args": [ "ooooooooooooooooo" ],
+"method": "add_assistant_text"
+}, {
+"args": [ "I'm required to apologize. One of my keys jammed." ],
+"method": "add_assistant_text"
+} ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Solved"
+length = 2.5
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "You trying to talk like a person is weird." ],
+"method": "add_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Success"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "I believe I should clarify a misunderstanding." ],
+"method": "add_assistant_text"
+} ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "HoveredOnGoal"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "Intro"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "IntroContinued"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "Solved"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "Success"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=2]
+states/HoveredOnGoal/node = SubResource( 9 )
+states/HoveredOnGoal/position = Vector2( 573, 7 )
+states/Intro/node = SubResource( 4 )
+states/Intro/position = Vector2( 290, 109 )
+states/IntroContinued/node = SubResource( 6 )
+states/IntroContinued/position = Vector2( 573, 109 )
+states/Solved/node = SubResource( 12 )
+states/Solved/position = Vector2( 890.409, 109 )
+states/Success/node = SubResource( 16 )
+states/Success/position = Vector2( 1112.41, 109 )
+transitions = [ "Intro", "IntroContinued", SubResource( 7 ), "IntroContinued", "HoveredOnGoal", SubResource( 10 ), "HoveredOnGoal", "Solved", SubResource( 13 ), "IntroContinued", "Solved", SubResource( 14 ), "Solved", "Success", SubResource( 17 ) ]
+start_node = "Intro"
+graph_offset = Vector2( 157.495, -83.0215 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=3]
+
+[node name="Level09" instance=ExtResource( 9 )]
+script = ExtResource( 10 )
+available_options = [ ExtResource( 6 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 1 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 11 ) ]
+character_goal = ExtResource( 8 )
+
+[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
+margin_bottom = 406.0
+
+[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+margin_top = 410.0
+text = "A remorseful billionaire with an alter ego as a night-crawling crime-fighter."
+values = [ 3, 1, 3, 0, 6, 6 ]
+text_values = [ "A", "B", "A", "C", "D", "D" ]
+
+[node name="AnimationPlayer" parent="." index="1"]
+anims/HoveredOnGoal = SubResource( 8 )
+anims/Intro = SubResource( 1 )
+anims/IntroContinued = SubResource( 5 )
+anims/Solved = SubResource( 11 )
+anims/Success = SubResource( 15 )
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource( 2 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 3 )
+
+[connection signal="mouse_entered" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/CharacterGoal" to="." method="_on_CharacterGoal_mouse_entered"]

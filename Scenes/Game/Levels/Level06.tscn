@@ -16,7 +16,7 @@
 
 [sub_resource type="Animation" id=12]
 resource_name = "HoveredOnGoal"
-length = 2.0
+length = 10.0
 tracks/0/type = "method"
 tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
@@ -24,10 +24,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.2 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.2, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "I sense a drift in the theme." ],
+"method": "add_player_text"
+}, {
+"args": [ "Probably no charisma." ],
 "method": "add_player_text"
 } ]
 }
@@ -172,7 +175,7 @@ margin_bottom = 406.0
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
 margin_top = 410.0
-text = "An engineer building a respectable savings to eventually escape society."
+text = "An engineer with a very respectable savings built up to eventually escape society."
 values = [ 0, 2, 0, 0, 3 ]
 text_values = [ "", "", "", "?", "?" ]
 
