@@ -19,7 +19,7 @@
 
 [sub_resource type="Animation" id=14]
 resource_name = "HoveredOnGoal"
-length = 3.0
+length = 9.0
 tracks/0/type = "method"
 tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/ScrollContainer/MarginContainer/AssistantChatBox")
 tracks/0/interp = 1
@@ -27,10 +27,16 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.5, 3, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [ "Negative values now?" ],
+"method": "add_player_text"
+}, {
+"args": [ "Indeed." ],
+"method": "add_assistant_text"
+}, {
+"args": [ "I remember deep sadness was a 4." ],
 "method": "add_player_text"
 } ]
 }
