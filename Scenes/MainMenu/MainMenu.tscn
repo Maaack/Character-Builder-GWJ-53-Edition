@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/MainMenu/MainMenuButtons.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Scenes/UI/SoundButton/SoundButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Audio/Music/Progress.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/Credits/Credits.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Themes/CRTShaderMaterial.tres" type="Material" id=9]
+[ext_resource path="res://Assets/Fonts/webpixel_bitmap/webpixel bitmap_bold.otf" type="DynamicFontData" id=10]
+[ext_resource path="res://Themes/BaseFont-BoldItalic.tres" type="DynamicFont" id=11]
 
 [sub_resource type="Animation" id=5]
 resource_name = "CloseSubMenu"
@@ -286,6 +289,10 @@ start_node = "Intro"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=9]
 
+[sub_resource type="DynamicFont" id=18]
+size = 40
+font_data = ExtResource( 10 )
+
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -338,14 +345,16 @@ custom_constants/separation = 24
 
 [node name="Title" type="Label" parent="TitleContainer/Titles/TitlesContainer"]
 margin_right = 832.0
-margin_bottom = 24.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 18 )
 text = "Character Builder"
 align = 1
 
 [node name="SubTitle" type="Label" parent="TitleContainer/Titles/TitlesContainer"]
-margin_top = 48.0
+margin_top = 64.0
 margin_right = 832.0
-margin_bottom = 72.0
+margin_bottom = 88.0
+custom_fonts/font = ExtResource( 11 )
 text = "For Godot Wild Jam #53"
 align = 1
 
@@ -440,6 +449,12 @@ text = "Back"
 stream = ExtResource( 6 )
 autoplay = true
 bus = "Music"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 9 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
 
 [connection signal="pressed" from="MenuContainer/MainMenuButtons/ButtonsContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="MenuContainer/MainMenuButtons/ButtonsContainer/TutorialButton" to="." method="_on_TutorialButton_pressed"]

@@ -1,4 +1,3 @@
-tool
 extends Control
 
 export(String) var text : String setget set_text
