@@ -1,10 +1,10 @@
+tool
 extends Control
 
 export(String) var text : String setget set_text
 export(Array, int) var values : Array = [0,0,0,0] setget set_values
 export(Array, String) var text_values : Array = ["","","",""] setget set_text_values
 
-onready var text_box_y_delta = rect_size.y - $MarginContainer/Panel/MarginContainer/VBoxContainer/TextContainer/DescriptiveText.rect_size.y
 var value_container_scene = preload("res://Scenes/CharacterOptions/ValueContainer.tscn")
 	
 func _display_clear_values():
@@ -58,9 +58,9 @@ func _ready():
 	_display_values()
 	_display_text()
 
-
-func _on_DescriptiveText_resized():
-	var text_label = get_node_or_null("%DescriptiveText")
-	if text_label == null or text_box_y_delta == null:
+func _on_MarginContainer_resized():
+	var container = $MarginContainer/Panel/MarginContainer
+	if container == null:
 		return
-	rect_min_size.y = text_label.rect_size.y + text_box_y_delta
+	rect_min_size.y = container.rect_size.y
+

@@ -209,11 +209,7 @@ script = ExtResource( 4 )
 available_options = [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 11 ) ]
 character_goal = ExtResource( 2 )
 
-[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
-margin_bottom = 406.0
-
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
-margin_top = 410.0
 text = "A fairly charismatic bard talented with multiple instruments."
 values = [ 0, 1, 2, 3 ]
 text_values = [ "", "", "", "?" ]

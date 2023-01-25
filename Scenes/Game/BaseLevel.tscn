@@ -69,15 +69,15 @@ size_flags_vertical = 3
 
 [node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 7 )]
 unique_name_in_owner = true
-margin_bottom = 406.0
+margin_bottom = 405.0
 size_flags_vertical = 3
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 unique_name_in_owner = true
-margin_top = 410.0
+margin_top = 409.0
 margin_right = 308.0
 margin_bottom = 568.0
-text = "A strong fighter."
+text = "A very strong fighter."
 values = [ 4, 0, 0, 0 ]
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]

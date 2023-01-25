@@ -160,7 +160,7 @@ available_options = [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ), ExtR
 character_goal = ExtResource( 3 )
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
-text = "A wize mage."
+text = "A very wise mage."
 values = [ 0, 4, 0 ]
 
 [node name="AnimationPlayer" parent="." index="1"]

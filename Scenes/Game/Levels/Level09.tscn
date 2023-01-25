@@ -148,11 +148,12 @@ available_options = [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtR
 character_goal = ExtResource( 8 )
 
 [node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
-margin_bottom = 406.0
+margin_bottom = 332.0
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
-margin_top = 410.0
-text = "A con-artist who has unpaid debts to a loan shark."
+margin_top = 336.0
+rect_min_size = Vector2( 230, 232 )
+text = "A more charismatic than cunning con-artist, with an unpaid debt to a loan shark, and a deep sadness."
 values = [ 0, 1, 0, 3, -1, 4 ]
 text_values = [ "A", "B", "A", "C", "-(B)", "D" ]
 

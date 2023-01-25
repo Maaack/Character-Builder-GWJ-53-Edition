@@ -184,10 +184,11 @@ available_options = [ ExtResource( 6 ), ExtResource( 14 ), ExtResource( 12 ), Ex
 character_goal = ExtResource( 8 )
 
 [node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
-margin_bottom = 406.0
+margin_bottom = 359.0
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
-margin_top = 410.0
+margin_top = 363.0
+rect_min_size = Vector2( 230, 205 )
 text = "A remorseful billionaire with an alter ego as a night-crawling crime-fighter."
 values = [ 3, 1, 3, 0, 6, 6 ]
 text_values = [ "A", "B", "A", "C", "D", "D" ]

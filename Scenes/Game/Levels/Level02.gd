@@ -1,3 +1,4 @@
+tool
 extends BaseLevel
 
 onready var animation_state_machine = $AnimationTree["parameters/playback"]
