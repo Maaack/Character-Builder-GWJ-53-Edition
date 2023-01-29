@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Themes/MainMenuTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/CharacterOptions/CharacterGoal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Game/BaseLevel.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Game/AssistantChatBox/AssistantChatBox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Audio/Music/High-Tech-City_Looping_1.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Themes/BaseFont-Bold-32px.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Scenes/Game/ScrollOptionsContainer.tscn" type="PackedScene" id=7]
 
 [node name="BaseLevel" type="Control"]
@@ -40,71 +41,81 @@ margin_left = 12.0
 margin_top = 12.0
 margin_right = 1004.0
 margin_bottom = 580.0
+custom_constants/separation = 24
 
-[node name="AvailableContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
-unique_name_in_owner = true
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
-margin_left = 312.0
-margin_right = 368.0
-margin_bottom = 568.0
-custom_constants/margin_right = 12
-custom_constants/margin_top = 12
-custom_constants/margin_left = 12
-custom_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer"]
-margin_left = 12.0
-margin_top = 12.0
-margin_right = 44.0
-margin_bottom = 556.0
-rect_min_size = Vector2( 32, 0 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
-margin_left = 372.0
-margin_right = 680.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
+margin_right = 314.0
 margin_bottom = 568.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 314.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 6 )
+text = "Available"
+align = 1
+
+[node name="AvailableContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource( 7 )]
+unique_name_in_owner = true
+margin_top = 36.0
+margin_right = 314.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
+margin_left = 338.0
+margin_right = 653.0
+margin_bottom = 568.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 315.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 6 )
+text = "Active"
+align = 1
+
 [node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 7 )]
 unique_name_in_owner = true
+margin_top = 36.0
+margin_right = 315.0
 margin_bottom = 405.0
 size_flags_vertical = 3
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 unique_name_in_owner = true
 margin_top = 409.0
-margin_right = 308.0
+margin_right = 315.0
 margin_bottom = 568.0
 text = "A very strong fighter."
 values = [ 4, 0, 0, 0 ]
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
-margin_left = 684.0
+margin_left = 677.0
 margin_right = 992.0
 margin_bottom = 568.0
 size_flags_horizontal = 3
 custom_constants/margin_right = 4
 custom_constants/margin_top = 4
-custom_constants/margin_left = 32
+custom_constants/margin_left = 4
 custom_constants/margin_bottom = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2"]
-margin_left = 32.0
+margin_left = 4.0
 margin_top = 4.0
-margin_right = 304.0
+margin_right = 311.0
 margin_bottom = 564.0
 
 [node name="Panel" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
-margin_right = 272.0
+margin_right = 307.0
 margin_bottom = 508.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel"]
-margin_right = 272.0
-margin_bottom = 508.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 12
@@ -114,12 +125,13 @@ custom_constants/margin_bottom = 4
 
 [node name="AssistantChatBox" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer" instance=ExtResource( 4 )]
 margin_top = 4.0
+margin_right = 295.0
 margin_bottom = 504.0
 scroll_following = true
 
 [node name="Panel2" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
 margin_top = 512.0
-margin_right = 272.0
+margin_right = 307.0
 margin_bottom = 560.0
 rect_min_size = Vector2( 0, 48 )
 
@@ -134,12 +146,12 @@ custom_constants/margin_bottom = 8
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel2/MarginContainer"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 264.0
+margin_right = 299.0
 margin_bottom = 40.0
 custom_constants/separation = 8
 
 [node name="SubmitButton" type="Button" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel2/MarginContainer/HBoxContainer"]
-margin_right = 256.0
+margin_right = 291.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 3

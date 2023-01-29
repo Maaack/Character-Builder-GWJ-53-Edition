@@ -44,7 +44,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Character Builder"
+config/name="Character Builder : Replacement"
 run/main_scene="res://Scenes/InitApp/InitApp.tscn"
 config/icon="res://icon.png"
 

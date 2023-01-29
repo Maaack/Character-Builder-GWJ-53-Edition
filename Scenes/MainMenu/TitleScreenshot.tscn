@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Fonts/webpixel_bitmap/webpixel bitmap_bold-italic.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Themes/MainMenuTheme.tres" type="Theme" id=4]
+[ext_resource path="res://Themes/CRTShaderMaterial.tres" type="Material" id=9]
+[ext_resource path="res://Assets/Fonts/webpixel_bitmap/webpixel bitmap_bold.otf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 160
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 48
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 64
+custom_constants/margin_top = 128
+custom_constants/margin_left = 64
+custom_constants/margin_bottom = 128
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+margin_left = 64.0
+margin_top = 128.0
+margin_right = 960.0
+margin_bottom = 472.0
+
+[node name="TitlesContainer" type="VBoxContainer" parent="MarginContainer/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -416.0
+margin_top = -64.0
+margin_right = 416.0
+margin_bottom = 64.0
+custom_constants/separation = 24
+
+[node name="Title" type="Label" parent="MarginContainer/Panel/TitlesContainer"]
+margin_right = 832.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 1 )
+text = "Character Builder"
+align = 1
+
+[node name="SubTitle" type="Label" parent="MarginContainer/Panel/TitlesContainer"]
+margin_top = 104.0
+margin_right = 832.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 2 )
+text = "For Godot Wild Jam #53"
+align = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 320
+custom_constants/margin_top = 160
+custom_constants/margin_left = 320
+custom_constants/margin_bottom = 160
+
+[node name="Panel" type="Panel" parent="MarginContainer2"]
+margin_left = 320.0
+margin_top = 160.0
+margin_right = 704.0
+margin_bottom = 440.0
+
+[node name="TitlesContainer" type="VBoxContainer" parent="MarginContainer2/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer2/Panel/TitlesContainer"]
+margin_top = 34.0
+margin_right = 384.0
+margin_bottom = 194.0
+custom_fonts/font = SubResource( 3 )
+text = "C B"
+align = 1
+autowrap = true
+
+[node name="SubTitle" type="Label" parent="MarginContainer2/Panel/TitlesContainer"]
+margin_top = 198.0
+margin_right = 384.0
+margin_bottom = 246.0
+custom_fonts/font = SubResource( 4 )
+text = "Replacement"
+align = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 9 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
