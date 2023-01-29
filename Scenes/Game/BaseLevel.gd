@@ -38,12 +38,15 @@ func _display_available_options():
 
 func _display_character_goal():
 	var character_goal_node = get_node_or_null("%CharacterGoal")
-	if character_goal_node == null:
+	var character_goal_sum_node = get_node_or_null("%CharacterGoalAndSum")
+	if character_goal_sum_node == null or character_goal_node == null:
 		return
 	if character_goal is OptionData:
 		character_goal_node.text = character_goal.text
 		character_goal_node.values = character_goal.values
 		character_goal_node.text_values = character_goal.text_values
+		character_goal_sum_node.values = character_goal.values
+		character_goal_sum_node.text_values = character_goal.text_values
 
 func set_available_options(new_values):
 	available_options = new_values
@@ -67,10 +70,10 @@ func _ready():
 	_reset_sums()
 
 func _display_sums():
-	var character_goal_node = get_node_or_null("%CharacterGoal")
-	if character_goal_node == null:
+	var character_goal_sum_node = get_node_or_null("%CharacterGoalAndSum")
+	if character_goal_sum_node == null:
 		return
-	character_goal_node.current_sum = active_value_sums
+	character_goal_sum_node.current_sum = active_value_sums
 
 func _add_values_to_sums(values : Array):
 	var i : int = 0
@@ -153,3 +156,15 @@ func _level_success_or_failure():
 
 func _on_SubmitButton_pressed():
 	_level_success_or_failure()
+
+func send_assistant_text(message_text : String):
+	var chat_container = get_node_or_null("%AssistantChatBox")
+	if chat_container == null:
+		return
+	chat_container.add_assistant_text(message_text)
+
+func send_player_text(message_text : String):
+	var chat_container = get_node_or_null("%AssistantChatBox")
+	if chat_container == null:
+		return
+	chat_container.add_player_text(message_text)
