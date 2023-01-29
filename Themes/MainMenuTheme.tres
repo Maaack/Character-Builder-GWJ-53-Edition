@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=16 format=2]
+[gd_resource type="Theme" load_steps=17 format=2]
 
 [ext_resource path="res://Themes/WhiteBlackBorder3pxStylebox.tres" type="StyleBox" id=1]
 [ext_resource path="res://Themes/BlackWhiteBorderStylebox.tres" type="StyleBox" id=2]
@@ -47,6 +47,22 @@ anti_aliasing = false
 bg_color = Color( 1, 1, 1, 1 )
 border_color = Color( 0, 0, 0, 1 )
 
+[sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 12.0
+content_margin_right = 12.0
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+expand_margin_top = 24.0
+anti_aliasing = false
+
 [resource]
 default_font = ExtResource( 5 )
 Button/colors/font_color = Color( 1, 1, 1, 1 )
@@ -88,5 +104,5 @@ VScrollBar/styles/grabber_pressed = ExtResource( 10 )
 VScrollBar/styles/scroll = ExtResource( 11 )
 VScrollBar/styles/scroll_focus = ExtResource( 11 )
 WindowDialog/colors/title_color = Color( 1, 1, 1, 1 )
-WindowDialog/fonts/title_font = ExtResource( 5 )
-WindowDialog/styles/panel = ExtResource( 3 )
+WindowDialog/fonts/title_font = ExtResource( 6 )
+WindowDialog/styles/panel = SubResource( 6 )
