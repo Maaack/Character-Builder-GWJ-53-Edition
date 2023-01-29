@@ -10,6 +10,7 @@
 [ext_resource path="res://Themes/BlackWhiteBorderSharpCorneredStylebox.tres" type="StyleBox" id=8]
 [ext_resource path="res://Themes/BlackWhiteBorderAltCorneredStylebox.tres" type="StyleBox" id=9]
 [ext_resource path="res://Themes/ScrollBarSliderStylebox.tres" type="StyleBox" id=10]
+[ext_resource path="res://Themes/ScrollBarContainerStylebox.tres" type="StyleBox" id=11]
 
 [sub_resource type="ImageTexture" id=4]
 
@@ -45,14 +46,6 @@ anti_aliasing = false
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 1 )
 border_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 1, 1, 1, 1 )
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color( 0, 0, 0, 0 )
 
 [resource]
 default_font = ExtResource( 5 )
@@ -90,10 +83,10 @@ TabContainer/styles/panel = ExtResource( 9 )
 TabContainer/styles/tab_bg = ExtResource( 2 )
 TabContainer/styles/tab_fg = ExtResource( 3 )
 VScrollBar/styles/grabber = ExtResource( 10 )
-VScrollBar/styles/grabber_highlight = SubResource( 3 )
-VScrollBar/styles/grabber_pressed = SubResource( 3 )
-VScrollBar/styles/scroll = ExtResource( 8 )
-VScrollBar/styles/scroll_focus = ExtResource( 8 )
+VScrollBar/styles/grabber_highlight = ExtResource( 10 )
+VScrollBar/styles/grabber_pressed = ExtResource( 10 )
+VScrollBar/styles/scroll = ExtResource( 11 )
+VScrollBar/styles/scroll_focus = ExtResource( 11 )
 WindowDialog/colors/title_color = Color( 1, 1, 1, 1 )
 WindowDialog/fonts/title_font = ExtResource( 5 )
 WindowDialog/styles/panel = ExtResource( 3 )

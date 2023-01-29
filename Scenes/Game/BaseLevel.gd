@@ -44,7 +44,6 @@ func _display_character_goal():
 		character_goal_node.text = character_goal.text
 		character_goal_node.values = character_goal.values
 		character_goal_node.text_values = character_goal.text_values
-	
 
 func set_available_options(new_values):
 	available_options = new_values
@@ -54,9 +53,24 @@ func set_character_goal(new_value):
 	character_goal = new_value
 	_display_character_goal()
 
+func _reset_sums():
+	if character_goal is OptionData:
+		var blank_array : Array = []
+		blank_array.resize(character_goal.values.size())
+		blank_array.fill(0)
+		active_value_sums = blank_array
+	_display_sums()
+
 func _ready():
 	_display_available_options()
 	_display_character_goal()
+	_reset_sums()
+
+func _display_sums():
+	var character_goal_node = get_node_or_null("%CharacterGoal")
+	if character_goal_node == null:
+		return
+	character_goal_node.current_sum = active_value_sums
 
 func _add_values_to_sums(values : Array):
 	var i : int = 0
@@ -65,6 +79,7 @@ func _add_values_to_sums(values : Array):
 			active_value_sums.append(0)
 		active_value_sums[i] += value
 		i += 1
+	_display_sums()
 
 func _remove_values_from_sums(values : Array):
 	var i : int = 0
@@ -73,6 +88,7 @@ func _remove_values_from_sums(values : Array):
 			active_value_sums.append(0)
 		active_value_sums[i] -= value
 		i += 1
+	_display_sums()
 
 func _option_hovered_on(_option_instance):
 	pass
@@ -87,6 +103,7 @@ func _active_options_updated():
 	var diff : int = _active_goal_diff()
 	if diff == 0:
 		_goal_reached()
+	_display_sums()
 
 func _option_selected(option_instance):
 	var available_options_container = get_node_or_null("%AvailableContainer")

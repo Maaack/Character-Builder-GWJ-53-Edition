@@ -148,12 +148,12 @@ align = 1
 unique_name_in_owner = true
 margin_top = 36.0
 margin_right = 315.0
-margin_bottom = 405.0
+margin_bottom = 349.0
 size_flags_vertical = 3
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 unique_name_in_owner = true
-margin_top = 409.0
+margin_top = 353.0
 margin_right = 315.0
 margin_bottom = 568.0
 text = "A very strong fighter."
