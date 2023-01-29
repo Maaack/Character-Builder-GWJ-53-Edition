@@ -12,8 +12,8 @@ export(DynamicFont) var h2_font
 export(DynamicFont) var h3_font
 export(DynamicFont) var h4_font
 export(float) var current_speed : float = 1.0
+export var scroll_active : bool = true
 
-var scroll_active : bool = true
 var scroll_paused : bool = false
 
 func load_file(file_path):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Themes/MainMenuTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/CharacterOptions/CharacterGoal.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Audio/Music/High-Tech-City_Looping_1.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Themes/BaseFont-Bold-32px.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Scenes/Game/ScrollOptionsContainer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Themes/BlackWhiteBorderAltCorneredStylebox.tres" type="StyleBox" id=8]
 
 [node name="BaseLevel" type="Control"]
 anchor_right = 1.0
@@ -62,38 +63,9 @@ margin_top = 36.0
 margin_right = 314.0
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
 margin_left = 338.0
 margin_right = 653.0
-margin_bottom = 568.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label2" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer"]
-margin_right = 315.0
-margin_bottom = 32.0
-custom_fonts/font = ExtResource( 6 )
-text = "Active"
-align = 1
-
-[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 7 )]
-unique_name_in_owner = true
-margin_top = 36.0
-margin_right = 315.0
-margin_bottom = 405.0
-size_flags_vertical = 3
-
-[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
-unique_name_in_owner = true
-margin_top = 409.0
-margin_right = 315.0
-margin_bottom = 568.0
-text = "A very strong fighter."
-values = [ 4, 0, 0, 0 ]
-
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
-margin_left = 677.0
-margin_right = 992.0
 margin_bottom = 568.0
 size_flags_horizontal = 3
 custom_constants/margin_right = 4
@@ -112,6 +84,7 @@ margin_right = 307.0
 margin_bottom = 508.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_styles/panel = ExtResource( 8 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel"]
 anchor_right = 1.0
@@ -156,6 +129,35 @@ margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Submit"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
+margin_left = 677.0
+margin_right = 992.0
+margin_bottom = 568.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 315.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 6 )
+text = "Active"
+align = 1
+
+[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 7 )]
+unique_name_in_owner = true
+margin_top = 36.0
+margin_right = 315.0
+margin_bottom = 405.0
+size_flags_vertical = 3
+
+[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+unique_name_in_owner = true
+margin_top = 409.0
+margin_right = 315.0
+margin_bottom = 568.0
+text = "A very strong fighter."
+values = [ 4, 0, 0, 0 ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

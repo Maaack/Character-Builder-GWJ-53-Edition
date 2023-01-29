@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=12 format=2]
+[gd_resource type="Theme" load_steps=16 format=2]
 
 [ext_resource path="res://Themes/WhiteBlackBorder3pxStylebox.tres" type="StyleBox" id=1]
 [ext_resource path="res://Themes/BlackWhiteBorderStylebox.tres" type="StyleBox" id=2]
@@ -8,6 +8,22 @@
 [ext_resource path="res://Themes/BaseFont-Bold.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Themes/BaseFont-BoldItalic.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Themes/BlackWhiteBorderSharpCorneredStylebox.tres" type="StyleBox" id=8]
+[ext_resource path="res://Themes/BlackWhiteBorderAltCorneredStylebox.tres" type="StyleBox" id=9]
+[ext_resource path="res://Themes/ScrollBarSliderStylebox.tres" type="StyleBox" id=10]
+
+[sub_resource type="ImageTexture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 4
+border_width_top = 6
+border_width_right = 4
+border_width_bottom = 6
+border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 0, 1 )
@@ -52,6 +68,13 @@ Button/styles/focus = null
 Button/styles/hover = ExtResource( 3 )
 Button/styles/normal = ExtResource( 2 )
 Button/styles/pressed = ExtResource( 1 )
+HSlider/icons/grabber = SubResource( 4 )
+HSlider/icons/grabber_disabled = SubResource( 4 )
+HSlider/icons/grabber_highlight = SubResource( 4 )
+HSlider/icons/tick = SubResource( 4 )
+HSlider/styles/grabber_area = ExtResource( 8 )
+HSlider/styles/grabber_area_highlight = ExtResource( 8 )
+HSlider/styles/slider = SubResource( 5 )
 Label/fonts/font = ExtResource( 5 )
 Panel/styles/panel = ExtResource( 2 )
 PanelContainer/styles/panel = ExtResource( 4 )
@@ -61,9 +84,16 @@ ProgressBar/styles/fg = SubResource( 1 )
 RichTextLabel/fonts/bold_font = ExtResource( 6 )
 RichTextLabel/fonts/bold_italics_font = ExtResource( 7 )
 RichTextLabel/fonts/normal_font = ExtResource( 5 )
-VScrollBar/styles/grabber = SubResource( 3 )
+TabContainer/colors/font_color_bg = Color( 1, 1, 1, 1 )
+TabContainer/colors/font_color_fg = Color( 1, 1, 1, 1 )
+TabContainer/styles/panel = ExtResource( 9 )
+TabContainer/styles/tab_bg = ExtResource( 2 )
+TabContainer/styles/tab_fg = ExtResource( 3 )
+VScrollBar/styles/grabber = ExtResource( 10 )
 VScrollBar/styles/grabber_highlight = SubResource( 3 )
 VScrollBar/styles/grabber_pressed = SubResource( 3 )
 VScrollBar/styles/scroll = ExtResource( 8 )
 VScrollBar/styles/scroll_focus = ExtResource( 8 )
+WindowDialog/colors/title_color = Color( 1, 1, 1, 1 )
+WindowDialog/fonts/title_font = ExtResource( 5 )
 WindowDialog/styles/panel = ExtResource( 3 )
