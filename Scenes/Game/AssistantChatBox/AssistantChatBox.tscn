@@ -14,5 +14,7 @@ size_flags_vertical = 3
 bbcode_enabled = true
 script = ExtResource( 1 )
 char_wait_time = 0.015
+assistant_color = Color( 1, 0, 1, 1 )
+player_color = Color( 0, 1, 1, 1 )
 
 [node name="ClickSoundsPlayer" parent="." instance=ExtResource( 2 )]

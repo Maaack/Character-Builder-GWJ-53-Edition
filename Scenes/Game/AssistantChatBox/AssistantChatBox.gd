@@ -2,6 +2,8 @@ extends RichTextLabel
 
 
 export(float) var char_wait_time = 0.5
+export(Color) var assistant_color : Color
+export(Color) var player_color : Color
 var line_buffer : String
 
 onready var _v_scroll := get_v_scroll()
@@ -34,19 +36,19 @@ func _write_out_line():
 		else:
 			_stop_writing_assistant_text()
 
-func add_assistant_text(value : String):
-	advance_assistant_text()
-	bbcode_text += "\n[b]Assistant:[/b]\n"
-	line_buffer = value
-	_write_out_line()
-
 func advance_assistant_text():
 	if not _line_buffer_empty():
 		# finish the text
 		bbcode_text += line_buffer
 		_stop_writing_assistant_text()
 
+func add_assistant_text(value : String):
+	advance_assistant_text()
+	bbcode_text += "\n[color=#%s][b]Assistant:[/b][/color]\n" % assistant_color.to_html(false)
+	line_buffer = value
+	_write_out_line()
+
 func add_player_text(value : String):
 	advance_assistant_text()
-	bbcode_text += "\n[right][b]Creator:[/b][/right]\n"
+	bbcode_text += "\n[right][color=#%s][b]Creator:[/b][/color][/right]\n" % player_color.to_html(false)
 	bbcode_text += "[right]" + value + "[/right]"
