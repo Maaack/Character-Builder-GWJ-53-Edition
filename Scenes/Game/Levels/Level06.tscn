@@ -18,7 +18,7 @@
 resource_name = "HoveredOnGoal"
 length = 10.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -28,10 +28,10 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "I sense a drift in the theme." ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "Probably no charisma." ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -39,7 +39,7 @@ tracks/0/keys = {
 resource_name = "Intro"
 length = 4.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -49,10 +49,10 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "Congratulations on making it this far." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "Whatever." ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -60,7 +60,7 @@ tracks/0/keys = {
 resource_name = "IntroContinued"
 length = 10.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -70,20 +70,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [ "Oh look, another stat." ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "We will continue to ramp up the difficulty." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "This isn't hard." ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
 [sub_resource type="Animation" id=17]
 resource_name = "Solved"
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -93,14 +93,14 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "And no charisma." ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
 [sub_resource type="Animation" id=3]
 resource_name = "Success"
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -110,7 +110,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "Have a good life." ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -170,15 +170,15 @@ script = ExtResource( 4 )
 available_options = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 13 ) ]
 character_goal = ExtResource( 7 )
 
-[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
-margin_bottom = 359.0
-
-[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
-margin_top = 363.0
-rect_min_size = Vector2( 230, 205 )
+[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="1"]
 text = "An engineer with a very respectable savings built up to eventually escape society."
 values = [ 0, 2, 0, 0, 3 ]
 text_values = [ "", "", "", "?", "?" ]
+
+[node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
+values = [ 0, 2, 0, 0, 3 ]
+text_values = [ "", "", "", "?", "?" ]
+current_sum = [ 0, 0, 0, 0, 0 ]
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/HoveredOnGoal = SubResource( 12 )
@@ -192,5 +192,3 @@ tree_root = SubResource( 10 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 11 )
-
-[connection signal="mouse_entered" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/CharacterGoal" to="." method="_on_CharacterGoal_mouse_entered"]

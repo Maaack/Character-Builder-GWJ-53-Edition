@@ -4,7 +4,7 @@
 resource_name = "Level01-IntroContinued"
 length = 6.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -14,18 +14,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [ "To begin your training -" ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "Skip." ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "We'd like to remind you -" ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "Skip!" ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "Have a nice day!" ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }

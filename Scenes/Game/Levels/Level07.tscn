@@ -16,7 +16,7 @@
 resource_name = "HoveredOnGoal"
 length = 4.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -26,10 +26,10 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "How much is deep sadness?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "4." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -37,7 +37,7 @@ tracks/0/keys = {
 resource_name = "HoveredOnSadness"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -47,7 +47,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "This suddenly took a turn." ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -55,7 +55,7 @@ tracks/0/keys = {
 resource_name = "Intro"
 length = 7.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -65,10 +65,10 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "I'm required to inform the creator that there will be no more stats added." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "That's heart-breaking." ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -76,7 +76,7 @@ tracks/0/keys = {
 resource_name = "IntroContinued"
 length = 16.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -86,20 +86,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [ "Are my responses making you a better chatbot?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "Oh, now you're quiet." ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "..." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
 [sub_resource type="Animation" id=17]
 resource_name = "Solved"
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -109,14 +109,14 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "Is this it?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
 [sub_resource type="Animation" id=3]
 resource_name = "Success"
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -126,7 +126,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "So sadness is a stat?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -202,10 +202,15 @@ script = ExtResource( 9 )
 available_options = [ ExtResource( 11 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 7 ) ]
 character_goal = ExtResource( 6 )
 
-[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="1"]
 text = "A broke street-magician with a deep sadness."
 values = [ 0, 0, 1, 1, 0, 4 ]
 text_values = [ "", "", "", "", "", "?" ]
+
+[node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
+values = [ 0, 0, 1, 1, 0, 4 ]
+text_values = [ "", "", "", "", "", "?" ]
+current_sum = [ 0, 0, 0, 0, 0, 0 ]
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/HoveredOnGoal = SubResource( 20 )
@@ -220,5 +225,3 @@ tree_root = SubResource( 10 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 11 )
-
-[connection signal="mouse_entered" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/CharacterGoal" to="." method="_on_CharacterGoal_mouse_entered"]

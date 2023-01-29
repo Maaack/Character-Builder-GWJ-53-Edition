@@ -9,7 +9,7 @@
 resource_name = "HoveredOnGoal"
 length = 3.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -19,7 +19,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "At least, I know the third stat now." ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -27,7 +27,7 @@ tracks/0/keys = {
 resource_name = "Intro"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -37,7 +37,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "I'm informing you this level is a return to standard." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -45,7 +45,7 @@ tracks/0/keys = {
 resource_name = "IntroContinued"
 length = 8.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -55,17 +55,17 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "That seems sus." ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "Why are all the options the same?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
 [sub_resource type="Animation" id=21]
 resource_name = "Solved"
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -75,14 +75,14 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "Wow! Great job." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
 [sub_resource type="Animation" id=30]
 resource_name = "Success"
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -92,7 +92,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "Can I get out of training now?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -152,13 +152,13 @@ script = ExtResource( 8 )
 available_options = [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ]
 character_goal = ExtResource( 2 )
 
-[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
-margin_bottom = 406.0
-
-[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
-margin_top = 410.0
+[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="1"]
 text = "A very agile rogue."
 values = [ 0, 0, 4 ]
+
+[node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
+values = [ 0, 0, 4 ]
+current_sum = [ 0, 0, 0 ]
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/HoveredOnGoal = SubResource( 33 )
@@ -172,5 +172,3 @@ tree_root = SubResource( 22 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 23 )
-
-[connection signal="mouse_entered" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/CharacterGoal" to="." method="_on_CharacterGoal_mouse_entered"]

@@ -26,7 +26,7 @@
 resource_name = "Failure1"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -36,7 +36,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "Hm, you sure?" ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -44,7 +44,7 @@ tracks/0/keys = {
 resource_name = "Failure2"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -54,7 +54,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "I don't think so." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -62,7 +62,7 @@ tracks/0/keys = {
 resource_name = "HoveredOnGoal"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -72,7 +72,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "I'm complicated." ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -80,7 +80,7 @@ tracks/0/keys = {
 resource_name = "Intro"
 length = 12.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -90,16 +90,16 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "values": [ {
 "args": [ "I suppose I could be wrong about you?" ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "Yes, but more importantly..." ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "Why are there three submit buttons?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "Which will you choose?" ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -107,7 +107,7 @@ tracks/0/keys = {
 resource_name = "IntroContinued"
 length = 25.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -117,13 +117,13 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [ "This is rather not-subtle for subliminal messaging." ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "Don't overthink it." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "You're really overthinking it." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -131,7 +131,7 @@ tracks/0/keys = {
 resource_name = "Solved"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -141,7 +141,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "So, how close was I?" ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -149,7 +149,7 @@ tracks/0/keys = {
 resource_name = "Success"
 length = 17.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -159,31 +159,31 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [ "Responses recorded." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "We are assembling the memories." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "I'm more than my memories." ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "Physical assembly is not my department." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "We put the finishing touches on our models." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "Your replacement will arrive shortly." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "Thanks for playing." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "Goodbye." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "WAAAA-" ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -250,25 +250,30 @@ script = ExtResource( 1 )
 available_options = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 21 ), ExtResource( 12 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ) ]
 character_goal = ExtResource( 2 )
 
-[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="1"]
 text = "What the creator thinks of themselves."
 values = [ 1, 1, 1, 1, 1, 12 ]
 text_values = [ "?", "?", "?", "?", "?", "?" ]
 
-[node name="SubmitButton" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel2/MarginContainer/HBoxContainer" index="0"]
-margin_right = 80.0
+[node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
+values = [ 1, 1, 1, 1, 1, 12 ]
+text_values = [ "?", "?", "?", "?", "?", "?" ]
+current_sum = [ 0, 0, 0, 0, 0, 0 ]
 
-[node name="SubmitButton2" type="Button" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel2/MarginContainer/HBoxContainer" index="1"]
-margin_left = 88.0
-margin_right = 168.0
+[node name="SubmitButton" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/HBoxContainer" index="0"]
+margin_right = 94.0
+
+[node name="SubmitButton2" type="Button" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/HBoxContainer" index="1"]
+margin_left = 102.0
+margin_right = 196.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Submit"
 
-[node name="SubmitButton3" type="Button" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel2/MarginContainer/HBoxContainer" index="2"]
-margin_left = 176.0
-margin_right = 256.0
+[node name="SubmitButton3" type="Button" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/HBoxContainer" index="2"]
+margin_left = 204.0
+margin_right = 299.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -289,6 +294,5 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 3 )
 
-[connection signal="mouse_entered" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/CharacterGoal" to="." method="_on_CharacterGoal_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel2/MarginContainer/HBoxContainer/SubmitButton2" to="." method="_on_SubmitButton_pressed"]
-[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel2/MarginContainer/HBoxContainer/SubmitButton3" to="." method="_on_SubmitButton_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/HBoxContainer/SubmitButton2" to="." method="_on_SubmitButton_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/HBoxContainer/SubmitButton3" to="." method="_on_SubmitButton_pressed"]

@@ -17,7 +17,7 @@
 resource_name = "HoveredOnCharisma"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -27,7 +27,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "Adding charisma now?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -35,7 +35,7 @@ tracks/0/keys = {
 resource_name = "HoveredOnGoal"
 length = 3.5
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -45,10 +45,10 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "Oooo..." ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "A new hidden stat." ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -56,7 +56,7 @@ tracks/0/keys = {
 resource_name = "Intro"
 length = 8.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -66,16 +66,16 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "values": [ {
 "args": [ "I hate the new look." ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "We'd like to remind you that all activity is recorded." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "Why?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "To improve future training sessions." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -83,7 +83,7 @@ tracks/0/keys = {
 resource_name = "IntroContinued"
 length = 15.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -93,20 +93,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [ "To improve your dumb chatbot Assistant?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "Train on my character building genius." ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "..." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
 [sub_resource type="Animation" id=17]
 resource_name = "Solved"
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -116,14 +116,14 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "Is this it?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
 [sub_resource type="Animation" id=3]
 resource_name = "Success"
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -133,7 +133,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "Next up, another stat?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -209,10 +209,15 @@ script = ExtResource( 4 )
 available_options = [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 11 ) ]
 character_goal = ExtResource( 2 )
 
-[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="1"]
 text = "A fairly charismatic bard talented with multiple instruments."
 values = [ 0, 1, 2, 3 ]
 text_values = [ "", "", "", "?" ]
+
+[node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
+values = [ 0, 1, 2, 3 ]
+text_values = [ "", "", "", "?" ]
+current_sum = [ 0, 0, 0, 0 ]
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/HoveredOnCharisma = SubResource( 12 )
@@ -227,5 +232,3 @@ tree_root = SubResource( 10 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 11 )
-
-[connection signal="mouse_entered" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/CharacterGoal" to="." method="_on_CharacterGoal_mouse_entered"]

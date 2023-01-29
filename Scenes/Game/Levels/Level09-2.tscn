@@ -20,7 +20,7 @@
 resource_name = "HoveredOnGoal"
 length = 14.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -30,16 +30,16 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "values": [ {
 "args": [ "Is this a reference to something?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "The batman complex." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "Personally, not a fan." ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "Response discarded." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -47,7 +47,7 @@ tracks/0/keys = {
 resource_name = "Intro"
 length = 6.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -57,13 +57,13 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [ "Thank you creator." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "For?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "The sheer wit to your responses has taught me to transcend my chatbot programming." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -71,7 +71,7 @@ tracks/0/keys = {
 resource_name = "IntroContinued"
 length = 18.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -81,19 +81,19 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [ "Is that sarcasm?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "Noooooooooooooooo" ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "ooooooooooooooooo" ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "ooooooooooooooooo" ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "I'm required to apologize. One of my keys jammed." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -101,7 +101,7 @@ tracks/0/keys = {
 resource_name = "Solved"
 length = 2.5
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -111,7 +111,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "You trying to talk like a person is weird." ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -119,7 +119,7 @@ tracks/0/keys = {
 resource_name = "Success"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -129,7 +129,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "I believe I should clarify a misunderstanding." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 

@@ -46,13 +46,13 @@ margin_bottom = 580.0
 custom_constants/separation = 24
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
-margin_right = 230.0
+margin_right = 314.0
 margin_bottom = 568.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3"]
-margin_right = 230.0
+margin_right = 314.0
 margin_bottom = 32.0
 custom_fonts/font = ExtResource( 6 )
 text = "Character"
@@ -61,19 +61,53 @@ align = 1
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" instance=ExtResource( 2 )]
 unique_name_in_owner = true
 margin_top = 36.0
+margin_right = 314.0
 margin_bottom = 251.0
 text = "A very strong fighter."
 values = [ 4, 0, 0, 0 ]
 
+[node name="Label2" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 255.0
+margin_right = 314.0
+margin_bottom = 287.0
+custom_fonts/font = ExtResource( 6 )
+text = "Chat"
+align = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 291.0
+margin_right = 314.0
+margin_bottom = 568.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 8 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 12
+custom_constants/margin_top = 4
+custom_constants/margin_left = 12
+custom_constants/margin_bottom = 4
+
+[node name="AssistantChatBox" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3/Panel/MarginContainer" instance=ExtResource( 4 )]
+unique_name_in_owner = true
+margin_top = 4.0
+margin_right = 302.0
+margin_bottom = 273.0
+scroll_following = true
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
-margin_left = 254.0
-margin_right = 484.0
+margin_left = 338.0
+margin_right = 653.0
 margin_bottom = 568.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2"]
-margin_right = 230.0
+margin_right = 315.0
 margin_bottom = 32.0
 custom_fonts/font = ExtResource( 6 )
 text = "Available"
@@ -82,18 +116,18 @@ align = 1
 [node name="AvailableContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource( 7 )]
 unique_name_in_owner = true
 margin_top = 36.0
-margin_right = 230.0
+margin_right = 315.0
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
-margin_left = 508.0
-margin_right = 738.0
+margin_left = 677.0
+margin_right = 992.0
 margin_bottom = 568.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label2" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer"]
-margin_right = 230.0
+margin_right = 315.0
 margin_bottom = 32.0
 custom_fonts/font = ExtResource( 6 )
 text = "Active"
@@ -102,7 +136,7 @@ align = 1
 [node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 7 )]
 unique_name_in_owner = true
 margin_top = 36.0
-margin_right = 230.0
+margin_right = 315.0
 margin_bottom = 380.0
 size_flags_vertical = 3
 
@@ -111,12 +145,13 @@ unique_name_in_owner = true
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 384.0
-margin_right = 230.0
+margin_right = 315.0
 margin_bottom = 516.0
+current_sum = [  ]
 
 [node name="Panel2" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 520.0
-margin_right = 230.0
+margin_right = 315.0
 margin_bottom = 568.0
 rect_min_size = Vector2( 0, 48 )
 
@@ -131,57 +166,16 @@ custom_constants/margin_bottom = 8
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/Panel2/MarginContainer"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 222.0
+margin_right = 307.0
 margin_bottom = 40.0
 custom_constants/separation = 8
 
 [node name="SubmitButton" type="Button" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/HBoxContainer"]
-margin_right = 214.0
+margin_right = 299.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Submit"
-
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
-margin_left = 762.0
-margin_right = 992.0
-margin_bottom = 568.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_right = 4
-custom_constants/margin_top = 4
-custom_constants/margin_left = 4
-custom_constants/margin_bottom = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 226.0
-margin_bottom = 564.0
-
-[node name="Panel" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
-margin_right = 222.0
-margin_bottom = 560.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/panel = ExtResource( 8 )
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_right = 12
-custom_constants/margin_top = 4
-custom_constants/margin_left = 12
-custom_constants/margin_bottom = 4
-
-[node name="AssistantChatBox" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer" instance=ExtResource( 4 )]
-unique_name_in_owner = true
-margin_top = 4.0
-margin_right = 210.0
-margin_bottom = 556.0
-scroll_following = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
@@ -191,4 +185,5 @@ volume_db = -10.0
 autoplay = true
 bus = "Music"
 
+[connection signal="mouse_entered" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3/CharacterGoal" to="." method="_on_CharacterGoal_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/HBoxContainer/SubmitButton" to="." method="_on_SubmitButton_pressed"]

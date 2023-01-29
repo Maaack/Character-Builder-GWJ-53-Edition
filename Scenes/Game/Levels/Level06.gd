@@ -21,7 +21,7 @@ func _level_success():
 		yield(get_tree().create_timer(2.5),"timeout")
 		._level_success()
 
-func _on_CharacterGoal_mouse_entered():
+func _goal_hovered():
 	if not hovered_on_goal and not goal_reached:
 		animation_state_machine.travel("HoveredOnGoal")
 		hovered_on_goal = true

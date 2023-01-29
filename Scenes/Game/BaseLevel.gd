@@ -168,3 +168,9 @@ func send_player_text(message_text : String):
 	if chat_container == null:
 		return
 	chat_container.add_player_text(message_text)
+
+func _goal_hovered():
+	pass
+
+func _on_CharacterGoal_mouse_entered():
+	_goal_hovered()

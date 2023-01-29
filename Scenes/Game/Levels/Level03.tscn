@@ -13,7 +13,7 @@
 resource_name = "Level03-Intro"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -23,7 +23,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "I'm required to inform you of any non-standard level." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -31,7 +31,7 @@ tracks/0/keys = {
 resource_name = "Level03-IntroContinued"
 length = 8.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -41,13 +41,13 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [ "What's that supposed to mean?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "It means the level is not standard." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "You get sassy?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -55,7 +55,7 @@ tracks/0/keys = {
 resource_name = "Level03-IntroContinued2"
 length = 6.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -65,10 +65,10 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "It means the level is not standard." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "You get sassy?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -76,7 +76,7 @@ tracks/0/keys = {
 resource_name = "Level03-SelectionNoted"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -86,10 +86,10 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "Selection noted." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "What? Why?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -97,7 +97,7 @@ tracks/0/keys = {
 resource_name = "Level03-Solved"
 length = 4.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -107,7 +107,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "Done. No more of these, please." ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -156,9 +156,13 @@ script = ExtResource( 7 )
 available_options = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 8 ) ]
 character_goal = ExtResource( 2 )
 
-[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="1"]
 text = "A well-rounded individual."
 values = [ 3, 3, 3 ]
+
+[node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
+values = [ 3, 3, 3 ]
+current_sum = [ 0, 0, 0 ]
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/Level03-Intro = SubResource( 1 )

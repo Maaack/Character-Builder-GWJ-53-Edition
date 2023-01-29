@@ -4,7 +4,7 @@
 resource_name = "Intro"
 length = 3.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -14,9 +14,9 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "Welcome to Character Creator. A product of the Rosen & Tyrell Corp. We are happy to have -" ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "Skip." ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }

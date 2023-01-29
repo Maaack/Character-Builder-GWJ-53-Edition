@@ -33,7 +33,7 @@ func _level_success_or_failure():
 		_level_failure()
 
 
-func _on_CharacterGoal_mouse_entered():
+func _goal_hovered():
 	if not hovered_on_goal and not goal_reached:
 		animation_state_machine.travel("HoveredOnGoal")
 		hovered_on_goal = true

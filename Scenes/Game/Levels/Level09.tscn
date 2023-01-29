@@ -21,7 +21,7 @@
 resource_name = "Intro"
 length = 6.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -31,13 +31,13 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [ "Thank you creator." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "For?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "The sheer wit to your responses has taught me to transcend my chatbot programming." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -45,7 +45,7 @@ tracks/0/keys = {
 resource_name = "IntroContinued"
 length = 20.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -55,19 +55,19 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [ "Is that sarcasm?" ],
-"method": "add_player_text"
+"method": "send_player_text"
 }, {
 "args": [ "Noooooooooooooooo" ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "ooooooooooooooooo" ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "ooooooooooooooooo" ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 }, {
 "args": [ "I'm required to apologize. One of my keys jammed." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -75,7 +75,7 @@ tracks/0/keys = {
 resource_name = "Solved"
 length = 3.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -85,7 +85,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "Stop trying to talk like a person." ],
-"method": "add_player_text"
+"method": "send_player_text"
 } ]
 }
 
@@ -93,7 +93,7 @@ tracks/0/keys = {
 resource_name = "Success"
 length = 3.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Panel/MarginContainer/AssistantChatBox")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -103,7 +103,7 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "I believe I should clarify a misunderstanding." ],
-"method": "add_assistant_text"
+"method": "send_assistant_text"
 } ]
 }
 
@@ -147,15 +147,27 @@ script = ExtResource( 10 )
 available_options = [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 16 ) ]
 character_goal = ExtResource( 8 )
 
-[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
-margin_bottom = 332.0
-
-[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
-margin_top = 336.0
+[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="1"]
+margin_bottom = 268.0
 rect_min_size = Vector2( 230, 232 )
 text = "A more charismatic than cunning con-artist, with an unpaid debt to a loan shark, and a deep sadness."
 values = [ 0, 1, 0, 3, -1, 4 ]
 text_values = [ "A", "B", "A", "C", "-(B)", "D" ]
+
+[node name="Label2" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="2"]
+margin_top = 272.0
+margin_bottom = 304.0
+
+[node name="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="3"]
+margin_top = 308.0
+
+[node name="AssistantChatBox" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3/Panel/MarginContainer" index="0"]
+margin_bottom = 256.0
+
+[node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
+values = [ 0, 1, 0, 3, -1, 4 ]
+text_values = [ "A", "B", "A", "C", "-(B)", "D" ]
+current_sum = [ 0, 0, 0, 0, 0, 0 ]
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/Intro = SubResource( 1 )
