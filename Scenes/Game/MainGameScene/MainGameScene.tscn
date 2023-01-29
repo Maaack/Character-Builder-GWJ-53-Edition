@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Game/MainGameScene/MainGameScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Game/Levels/Level01.tscn" type="PackedScene" id=2]
@@ -15,12 +15,13 @@
 [ext_resource path="res://Scenes/Game/Levels/Level11.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Game/Levels/Level12.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Themes/CRTShaderMaterial.tres" type="Material" id=15]
+[ext_resource path="res://Scenes/Credits/EndCredits.tscn" type="PackedScene" id=16]
 
 [node name="MainGameScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
-levels = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 14 ) ]
+levels = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 16 ) ]
 
 [node name="PauseMenuControl" type="Control" parent="."]
 anchor_right = 1.0

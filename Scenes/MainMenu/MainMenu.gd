@@ -16,7 +16,6 @@ func play_game():
 
 func _open_sub_menu(menu : Control):
 	menu.visible = true
-	menu.set_process(true)
 	sub_menu = menu
 	animation_state_machine.travel("OpenSubMenu")
 
@@ -25,7 +24,6 @@ func _close_sub_menu():
 		return
 	animation_state_machine.travel("MainMenuOpen")
 	sub_menu.visible = false
-	sub_menu.set_process(false)
 	sub_menu = null
 	animation_state_machine.travel("MainMenuOpen")
 

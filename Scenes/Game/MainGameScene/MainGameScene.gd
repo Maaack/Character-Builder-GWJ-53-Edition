@@ -21,7 +21,8 @@ func set_level_scene(value : PackedScene) -> void:
 	if level_scene == null:
 		return
 	var level_instance = level_scene.instance()
-	level_instance.connect("success", self, "_level_success")
+	if level_instance.has_signal("success"):
+		level_instance.connect("success", self, "_level_success")
 	level_container_node.add_child(level_instance)
 
 func _ready():

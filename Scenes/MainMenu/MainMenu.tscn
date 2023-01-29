@@ -408,7 +408,7 @@ margin_bottom = 240.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-custom_constants/margin_top = 128
+custom_constants/margin_top = 160
 custom_constants/margin_bottom = 32
 __meta__ = {
 "_edit_lock_": true
@@ -418,7 +418,7 @@ __meta__ = {
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 128.0
+margin_top = 160.0
 margin_right = 1024.0
 margin_bottom = 568.0
 
