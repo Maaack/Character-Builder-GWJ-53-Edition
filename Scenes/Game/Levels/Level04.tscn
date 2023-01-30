@@ -155,10 +155,10 @@ character_goal = ExtResource( 2 )
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="1"]
 text = "A very agile rogue."
 values = [ 0, 0, 4 ]
+keys = [ "Str", "Wis", "?" ]
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 0, 0, 4 ]
-current_sum = [ 0, 0, 0 ]
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/HoveredOnGoal = SubResource( 33 )

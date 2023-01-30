@@ -213,6 +213,7 @@ character_goal = ExtResource( 2 )
 text = "A fairly charismatic bard talented with multiple instruments."
 values = [ 0, 1, 2, 3 ]
 text_values = [ "", "", "", "?" ]
+keys = [ "Str", "Wis", "Agi", "?" ]
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 0, 1, 2, 3 ]

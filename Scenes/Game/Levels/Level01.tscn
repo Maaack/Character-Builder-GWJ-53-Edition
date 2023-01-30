@@ -59,11 +59,7 @@ available_options = [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ), ExtR
 character_goal = ExtResource( 8 )
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="1"]
-values = [ 4, 0, 0 ]
-
-[node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
-values = [ 4, 0, 0 ]
-current_sum = [ 0, 0, 0 ]
+keys = [ "?", "?", "?" ]
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/Level01-ClickSubmit = SubResource( 2 )

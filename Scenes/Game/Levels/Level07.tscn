@@ -206,6 +206,7 @@ character_goal = ExtResource( 6 )
 text = "A broke street-magician with a deep sadness."
 values = [ 0, 0, 1, 1, 0, 4 ]
 text_values = [ "", "", "", "", "", "?" ]
+keys = [ "Str", "Wis", "Agi", "Cha", "Wea", "?" ]
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 0, 0, 1, 1, 0, 4 ]

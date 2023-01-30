@@ -162,10 +162,10 @@ character_goal = ExtResource( 3 )
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="1"]
 text = "A very wise mage."
 values = [ 0, 4, 0 ]
+keys = [ "Str", "?", "?" ]
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 0, 4, 0 ]
-current_sum = [ 0, 0, 0 ]
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/Level02-Hovered = SubResource( 2 )

@@ -159,10 +159,10 @@ character_goal = ExtResource( 2 )
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="1"]
 text = "A well-rounded individual."
 values = [ 3, 3, 3 ]
+keys = [ "Str", "Wis", "?" ]
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 3, 3, 3 ]
-current_sum = [ 0, 0, 0 ]
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/Level03-Intro = SubResource( 1 )
