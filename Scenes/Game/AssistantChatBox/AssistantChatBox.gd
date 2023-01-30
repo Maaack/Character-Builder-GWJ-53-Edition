@@ -4,19 +4,21 @@ extends RichTextLabel
 export(float) var char_wait_time = 0.5
 export(Color) var assistant_color : Color
 export(Color) var player_color : Color
+export(float) var v_scroll_margin : float = 0.0 
 var line_buffer : String
 
 onready var _v_scroll := get_v_scroll()
 onready var margin := get_parent()
 
 func _ready() -> void:
+	margin.set("custom_constants/margin_right", v_scroll_margin)
 	_v_scroll.connect("visibility_changed", self, "_on_scroll_bar_visibility_changed")
 
 func _on_scroll_bar_visibility_changed() -> void:
 	if _v_scroll.visible:
 		margin.set("custom_constants/margin_right", 0)
 	else:
-		margin.set("custom_constants/margin_right", _v_scroll.rect_size.x)
+		margin.set("custom_constants/margin_right", v_scroll_margin)
 
 func _line_buffer_empty():
 	return line_buffer.empty()

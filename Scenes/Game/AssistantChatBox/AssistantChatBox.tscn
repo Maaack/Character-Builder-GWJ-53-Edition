@@ -16,5 +16,6 @@ script = ExtResource( 1 )
 char_wait_time = 0.015
 assistant_color = Color( 1, 0, 1, 1 )
 player_color = Color( 0, 1, 1, 1 )
+v_scroll_margin = 16.0
 
 [node name="ClickSoundsPlayer" parent="." instance=ExtResource( 2 )]

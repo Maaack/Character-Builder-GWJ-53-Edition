@@ -90,16 +90,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 12
+custom_constants/margin_right = 4
 custom_constants/margin_top = 4
 custom_constants/margin_left = 12
 custom_constants/margin_bottom = 4
 
-[node name="AssistantChatBox" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3/Panel/MarginContainer" instance=ExtResource( 4 )]
-unique_name_in_owner = true
+[node name="ChatContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3/Panel/MarginContainer"]
+margin_left = 12.0
 margin_top = 4.0
-margin_right = 302.0
+margin_right = 310.0
 margin_bottom = 242.0
+custom_constants/margin_right = 0
+
+[node name="AssistantChatBox" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3/Panel/MarginContainer/ChatContainer" instance=ExtResource( 4 )]
+unique_name_in_owner = true
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 298.0
+margin_bottom = 238.0
 scroll_following = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
