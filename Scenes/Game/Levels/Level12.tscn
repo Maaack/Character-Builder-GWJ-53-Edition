@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Scenes/Game/Levels/Level12.gd" type="Script" id=1]
 [ext_resource path="res://Resources/CharacterOptionData/Goal12-WhatYouThinkOfYou.tres" type="Resource" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionSadness-000002.tres" type="Resource" id=19]
 [ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionMoreSadness-000003.tres" type="Resource" id=20]
 [ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionMoreCharisma-000300.tres" type="Resource" id=21]
+[ext_resource path="res://Assets/Icons/portrait.png" type="Texture" id=22]
 
 [sub_resource type="Animation" id=18]
 resource_name = "Failure1"
@@ -254,6 +255,7 @@ character_goal = ExtResource( 2 )
 text = "What the creator thinks of themselves."
 values = [ 1, 1, 1, 1, 1, 12 ]
 text_values = [ "?", "?", "?", "?", "?", "?" ]
+icon = ExtResource( 22 )
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 1, 1, 1, 1, 1, 12 ]

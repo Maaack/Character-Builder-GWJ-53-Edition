@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/CharacterOptionData/Level06/OptionSomeAgility-00100.tres" type="Resource" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Resources/CharacterOptionData/Level06/OptionAgility-00200.tres" type="Resource" id=11]
 [ext_resource path="res://Resources/CharacterOptionData/Level06/OptionCharisma-00020.tres" type="Resource" id=12]
 [ext_resource path="res://Resources/CharacterOptionData/Level06/OptionMoney-00002.tres" type="Resource" id=13]
+[ext_resource path="res://Assets/Icons/pc.png" type="Texture" id=14]
 
 [sub_resource type="Animation" id=12]
 resource_name = "HoveredOnGoal"
@@ -175,6 +176,7 @@ text = "An engineer with a very respectable savings built up to eventually escap
 values = [ 0, 2, 0, 0, 3 ]
 text_values = [ "", "", "", "?", "?" ]
 keys = [ "Str", "Wis", "Agi", "Cha", "?" ]
+icon = ExtResource( 14 )
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 0, 2, 0, 0, 3 ]

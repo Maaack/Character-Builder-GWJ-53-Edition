@@ -50,6 +50,12 @@ margin_right = 112.0
 margin_bottom = 112.0
 rect_min_size = Vector2( 112, 112 )
 
+[node name="IconTextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel"]
+unique_name_in_owner = true
+margin_right = 112.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 112, 112 )
+
 [node name="ValuesGridContainer" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 margin_left = 116.0

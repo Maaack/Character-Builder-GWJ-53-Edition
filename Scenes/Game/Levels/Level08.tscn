@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionSomeAgility-001000.tres" type="Resource" id=1]
 [ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionSomeSadness-000001.tres" type="Resource" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionAgility-002000.tres" type="Resource" id=15]
 [ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionStrength-200000.tres" type="Resource" id=16]
 [ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionCharisma-000200.tres" type="Resource" id=17]
+[ext_resource path="res://Assets/Icons/snatch.png" type="Texture" id=18]
 
 [sub_resource type="Animation" id=8]
 resource_name = "HoveredOnGoal"
@@ -183,6 +184,7 @@ character_goal = ExtResource( 9 )
 text = "A talentless, morally-bankrupt, millionaire."
 values = [ 0, 0, 0, 0, 4, 4 ]
 text_values = [ "", "", "", "", "A", "A" ]
+icon = ExtResource( 18 )
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 0, 0, 0, 0, 4, 4 ]

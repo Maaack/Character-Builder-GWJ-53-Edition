@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/CharacterOptionData/Goal03-WellRoundedIndividual.tres" type="Resource" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option300.tres" type="Resource" id=6]
 [ext_resource path="res://Scenes/Game/Levels/Level03.gd" type="Script" id=7]
 [ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option420.tres" type="Resource" id=8]
+[ext_resource path="res://Assets/Icons/character.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Level03-Intro"
@@ -160,6 +161,7 @@ character_goal = ExtResource( 2 )
 text = "A well-rounded individual."
 values = [ 3, 3, 3 ]
 keys = [ "Str", "Wis", "?" ]
+icon = ExtResource( 9 )
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 3, 3, 3 ]

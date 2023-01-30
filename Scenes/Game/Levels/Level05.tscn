@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/CharacterOptionData/Goal05-ACharismaticBard.tres" type="Resource" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Resources/CharacterOptionData/Level05/OptionAgility-0020.tres" type="Resource" id=10]
 [ext_resource path="res://Resources/CharacterOptionData/Level05/OptionMoreCharisma-0003.tres" type="Resource" id=11]
 [ext_resource path="res://Resources/CharacterOptionData/Level05/OptionStrength-2000.tres" type="Resource" id=12]
+[ext_resource path="res://Assets/Icons/banjo.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=12]
 resource_name = "HoveredOnCharisma"
@@ -214,6 +215,7 @@ text = "A fairly charismatic bard talented with multiple instruments."
 values = [ 0, 1, 2, 3 ]
 text_values = [ "", "", "", "?" ]
 keys = [ "Str", "Wis", "Agi", "?" ]
+icon = ExtResource( 13 )
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 0, 1, 2, 3 ]

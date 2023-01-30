@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Resources/CharacterOptionData/Level09/OptionOutsmartedClassmates.tres" type="Resource" id=1]
 [ext_resource path="res://Resources/CharacterOptionData/Level09/OptionReadBooks.tres" type="Resource" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Resources/CharacterOptionData/Level09/OptionDesperateEnough.tres" type="Resource" id=14]
 [ext_resource path="res://Resources/CharacterOptionData/Level09/OptionBillionaireParents.tres" type="Resource" id=15]
 [ext_resource path="res://Resources/CharacterOptionData/Level09/OptionCrimeAndCorruption.tres" type="Resource" id=16]
+[ext_resource path="res://Assets/Icons/convince.png" type="Texture" id=17]
 
 [sub_resource type="Animation" id=14]
 resource_name = "HoveredOnGoal"
@@ -180,15 +181,16 @@ script = ExtResource( 10 )
 available_options = [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 16 ) ]
 character_goal = ExtResource( 8 )
 
-[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
-margin_bottom = 332.0
-
-[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
-margin_top = 336.0
-rect_min_size = Vector2( 230, 232 )
+[node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="1"]
 text = "A more charismatic than cunning con-artist, with an unpaid debt to a loan shark, and a deep sadness."
 values = [ 0, 1, 0, 3, -1, 4 ]
 text_values = [ "A", "B", "A", "C", "-(B)", "D" ]
+icon = ExtResource( 17 )
+
+[node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
+values = [ 0, 1, 0, 3, -1, 4 ]
+text_values = [ "A", "B", "A", "C", "-(B)", "D" ]
+current_sum = [ 0, 0, 0, 0, 0, 0 ]
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/HoveredOnGoal = SubResource( 14 )
@@ -202,5 +204,3 @@ tree_root = SubResource( 3 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 4 )
-
-[connection signal="mouse_entered" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/CharacterGoal" to="." method="_on_CharacterGoal_mouse_entered"]

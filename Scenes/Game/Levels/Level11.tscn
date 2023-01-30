@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/Game/Levels/Level11.gd" type="Script" id=1]
 [ext_resource path="res://Resources/CharacterOptionData/Goal11-WhatIThinkOfYou.tres" type="Resource" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Resources/CharacterOptionData/Level11/OptionGoodAtMath.tres" type="Resource" id=5]
 [ext_resource path="res://Resources/CharacterOptionData/Level11/OptionAJob.tres" type="Resource" id=6]
 [ext_resource path="res://Resources/CharacterOptionData/Level11/OptionParanoidAndRude.tres" type="Resource" id=7]
+[ext_resource path="res://Assets/Icons/vomiting.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=8]
@@ -168,6 +169,7 @@ character_goal = ExtResource( 2 )
 text = "What the assistant thinks of the creator as a person."
 values = [ 0, 1, 0, 0, 1, 5 ]
 text_values = [ "A", "B", "A", "A", "B", "F" ]
+icon = ExtResource( 8 )
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 0, 1, 0, 0, 1, 5 ]

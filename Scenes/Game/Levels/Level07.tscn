@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionSomeWisdom-010000.tres" type="Resource" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Game/Levels/Level07.gd" type="Script" id=9]
 [ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionSomeMoney-000010.tres" type="Resource" id=10]
 [ext_resource path="res://Resources/CharacterOptionData/Level07-08/OptionSomeStrength-100000.tres" type="Resource" id=11]
+[ext_resource path="res://Assets/Icons/magick-trick.png" type="Texture" id=12]
 
 [sub_resource type="Animation" id=20]
 resource_name = "HoveredOnGoal"
@@ -207,6 +208,7 @@ text = "A broke street-magician with a deep sadness."
 values = [ 0, 0, 1, 1, 0, 4 ]
 text_values = [ "", "", "", "", "", "?" ]
 keys = [ "Str", "Wis", "Agi", "Cha", "Wea", "?" ]
+icon = ExtResource( 12 )
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 0, 0, 1, 1, 0, 4 ]

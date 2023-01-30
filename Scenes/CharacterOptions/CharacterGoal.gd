@@ -5,6 +5,7 @@ export(String) var text : String setget set_text
 export(Array, int) var values : Array = [0,0,0,0] setget set_values
 export(Array, String) var text_values : Array = ["","","",""] setget set_text_values
 export(Array, String) var keys : Array = ["Str", "Wis", "Agi", "Cha", "Wea", "Sad"]
+export(Texture) var icon : Texture setget set_icon
 
 var value_container_scene = preload("res://Scenes/CharacterOptions/ValueContainer.tscn")
 var key_value_container_scene = preload("res://Scenes/CharacterOptions/KeyValueContainer.tscn")
@@ -79,6 +80,13 @@ func set_text_values(new_values):
 func set_text(new_value):
 	text = new_value
 	_display_text()
+
+func set_icon(new_value):
+	icon = new_value
+	var texture_rect = get_node_or_null("%IconTextureRect")
+	if texture_rect == null:
+		return
+	texture_rect.texture = icon
 
 func _ready():
 	_display_values()
