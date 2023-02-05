@@ -2,7 +2,7 @@ tool
 extends Control
 
 export(PackedScene) var level_scene : PackedScene setget set_level_scene
-export(Array, PackedScene) var levels : Array =  []
+export(Resource) var level_list : Resource
 
 var success_screen_packed = preload("res://Scenes/SuccessScreen/SuccessScreen.tscn")
 var level_number : int = 0
@@ -27,8 +27,8 @@ func set_level_scene(value : PackedScene) -> void:
 
 func _ready():
 	if level_scene == null:
-		level_number = GameLog.get_max_level_reached()
-		if level_number >= levels.size():
-			level_number = levels.size() - 1
-		level_scene = levels[level_number]
+		level_number = GameLog.get_current_level()
+		if level_number >= level_list.levels.size():
+			level_number = level_list.levels.size() - 1
+		level_scene = level_list.levels[level_number]
 	self.level_scene = level_scene

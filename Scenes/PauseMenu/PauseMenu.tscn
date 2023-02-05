@@ -48,13 +48,13 @@ custom_constants/separation = 24
 [node name="ResumeBtn" parent="Control/ButtonsContainer" instance=ExtResource( 4 )]
 margin_right = 233.0
 margin_bottom = 40.0
-text = "Resume Game"
+text = "Resume"
 
 [node name="RestartBtn" parent="Control/ButtonsContainer" instance=ExtResource( 4 )]
 margin_top = 64.0
 margin_right = 233.0
 margin_bottom = 104.0
-text = "Restart Game"
+text = "Restart"
 
 [node name="OptionsBtn" parent="Control/ButtonsContainer" instance=ExtResource( 4 )]
 margin_top = 128.0

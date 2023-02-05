@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://Scripts/GameLog.gd"
 }, {
 "base": "Resource",
+"class": "LevelList",
+"language": "GDScript",
+"path": "res://Resources/LevelData/LevelList.gd"
+}, {
+"base": "Resource",
 "class": "OptionData",
 "language": "GDScript",
 "path": "res://Resources/CharacterOptionData/OptionData.gd"
@@ -39,6 +44,7 @@ _global_script_class_icons={
 "AppSettings": "",
 "BaseLevel": "",
 "GameLog": "",
+"LevelList": "",
 "OptionData": ""
 }
 

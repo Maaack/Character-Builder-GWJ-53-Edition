@@ -174,3 +174,6 @@ func _goal_hovered():
 
 func _on_CharacterGoal_mouse_entered():
 	_goal_hovered()
+
+func get_level_texture():
+	return $MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3/CharacterGoal.icon

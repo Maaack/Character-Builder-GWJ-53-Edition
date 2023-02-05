@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Game/LevelSelect/LevelSelect.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/PauseMenuController.gd" type="Script" id=2]
+[ext_resource path="res://Resources/LevelData/MainLevelList.tres" type="Resource" id=3]
+[ext_resource path="res://Themes/CRTShaderMaterial.tres" type="Material" id=4]
+[ext_resource path="res://Themes/MainMenuTheme.tres" type="Theme" id=5]
+
+[node name="LevelSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+theme = ExtResource( 5 )
+script = ExtResource( 1 )
+level_list = ExtResource( 3 )
+game_scene = "res://Scenes/Game/MainGameScene/MainGameScene.tscn"
+
+[node name="PauseMenuControl" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+unique_name_in_owner = true
+margin_left = 258.0
+margin_top = 46.0
+margin_right = 766.0
+margin_bottom = 554.0
+columns = 4
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 4 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
