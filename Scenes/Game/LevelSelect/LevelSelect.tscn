@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Game/LevelSelect/LevelSelect.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PauseMenuController.gd" type="Script" id=2]
 [ext_resource path="res://Resources/LevelData/MainLevelList.tres" type="Resource" id=3]
-[ext_resource path="res://Themes/CRTShaderMaterial.tres" type="Material" id=4]
+[ext_resource path="res://Themes/CRTShaderHighAbMaterial.tres" type="Material" id=4]
 [ext_resource path="res://Themes/MainMenuTheme.tres" type="Theme" id=5]
 [ext_resource path="res://Themes/BaseFont-Bold-32px.tres" type="DynamicFont" id=6]
 
