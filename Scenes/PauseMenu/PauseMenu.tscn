@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/OptionsMenu/OptionsMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PauseMenu/PauseMenu.gd" type="Script" id=2]
 [ext_resource path="res://Themes/MainMenuTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Scenes/UI/SoundButton/SoundButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Themes/BaseFont-Bold-32px.tres" type="DynamicFont" id=5]
 
 [node name="PauseMenu" type="CanvasLayer"]
 pause_mode = 2
@@ -31,6 +32,7 @@ margin_left = -93.5
 margin_top = 50.0
 margin_right = 93.5
 margin_bottom = 131.0
+custom_fonts/font = ExtResource( 5 )
 text = "Pause"
 align = 1
 
@@ -40,10 +42,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -116.5
-margin_top = -116.0
+margin_top = -180.0
 margin_right = 116.5
-margin_bottom = 116.0
+margin_bottom = 180.0
 custom_constants/separation = 24
+alignment = 1
 
 [node name="ResumeBtn" parent="Control/ButtonsContainer" instance=ExtResource( 4 )]
 margin_right = 233.0
@@ -56,22 +59,28 @@ margin_right = 233.0
 margin_bottom = 104.0
 text = "Restart"
 
-[node name="OptionsBtn" parent="Control/ButtonsContainer" instance=ExtResource( 4 )]
+[node name="SelectLevelBtn" parent="Control/ButtonsContainer" instance=ExtResource( 4 )]
 margin_top = 128.0
 margin_right = 233.0
 margin_bottom = 168.0
-text = "Options"
+text = "Select Level"
 
-[node name="MainMenuBtn" parent="Control/ButtonsContainer" instance=ExtResource( 4 )]
+[node name="OptionsBtn" parent="Control/ButtonsContainer" instance=ExtResource( 4 )]
 margin_top = 192.0
 margin_right = 233.0
 margin_bottom = 232.0
-text = "Return to Main Menu"
+text = "Options"
 
-[node name="ExitBtn" parent="Control/ButtonsContainer" instance=ExtResource( 4 )]
+[node name="MainMenuBtn" parent="Control/ButtonsContainer" instance=ExtResource( 4 )]
 margin_top = 256.0
 margin_right = 233.0
 margin_bottom = 296.0
+text = "Return to Main Menu"
+
+[node name="ExitBtn" parent="Control/ButtonsContainer" instance=ExtResource( 4 )]
+margin_top = 320.0
+margin_right = 233.0
+margin_bottom = 360.0
 text = "Exit Game"
 
 [node name="ConfirmRestart" type="ConfirmationDialog" parent="Control"]
@@ -100,6 +109,7 @@ visible = false
 
 [connection signal="pressed" from="Control/ButtonsContainer/ResumeBtn" to="." method="_on_ResumeBtn_pressed"]
 [connection signal="pressed" from="Control/ButtonsContainer/RestartBtn" to="." method="_on_RestartBtn_pressed"]
+[connection signal="pressed" from="Control/ButtonsContainer/SelectLevelBtn" to="." method="_on_SelectLevelBtn_pressed"]
 [connection signal="pressed" from="Control/ButtonsContainer/OptionsBtn" to="." method="_on_OptionsBtn_pressed"]
 [connection signal="pressed" from="Control/ButtonsContainer/MainMenuBtn" to="." method="_on_MainMenuBtn_pressed"]
 [connection signal="pressed" from="Control/ButtonsContainer/ExitBtn" to="." method="_on_ExitBtn_pressed"]

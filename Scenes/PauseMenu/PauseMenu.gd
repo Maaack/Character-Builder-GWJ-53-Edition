@@ -44,3 +44,8 @@ func _on_ConfirmExit_confirmed():
 func _ready():
 	if OS.has_feature("web"):
 		$Control/ButtonsContainer/ExitBtn.hide()
+	if GameLog.get_max_level_reached() < 2:
+		$Control/ButtonsContainer/SelectLevelBtn.hide()
+
+func _on_SelectLevelBtn_pressed():
+	SceneLoader.load_scene("res://Scenes/Game/LevelSelect/LevelSelect.tscn")

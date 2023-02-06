@@ -58,14 +58,23 @@ func _setup_for_web():
 	if OS.has_feature("web"):
 		$MenuContainer/MainMenuButtons/ButtonsContainer/ExitButton.hide()
 
+func _setup_menu():
+	_setup_for_web()
+	if GameLog.get_max_level_reached() < 2:
+		$MenuContainer/MainMenuButtons/ButtonsContainer/SelectLevelButton.hide()
+
 func _setup_version_name():
 	AppLog.version_opened(version_name)
 	$"%VersionNameLabel".text = "v%s" % version_name
 
 func _ready():
-	_setup_for_web()
+	_setup_menu()
 	_setup_version_name()
 	animation_state_machine = $MenuAnimationTree.get("parameters/playback")
 
 func _on_Credits_end_reached():
 	_close_sub_menu()
+
+
+func _on_SelectLevelButton_pressed():
+	SceneLoader.load_scene("res://Scenes/Game/LevelSelect/LevelSelect.tscn")

@@ -38,8 +38,13 @@ func _on_ExitButton_pressed():
 func _ready():
 	if OS.has_feature("web"):
 		get_node("%ExitButton").hide()
+	if GameLog.get_max_level_reached() < 2:
+		$Panel/MarginContainer/NinePatchRect/MarginContainer/Control/ButtonsContainer/SelectLevelButton.hide()
 	yield(get_tree().create_timer(0.5), "timeout")
 	can_next = true
 
 func _on_NextLevelButton_pressed():
 	SceneLoader.reload_current_scene()
+
+func _on_SelectLevelButton_pressed():
+	SceneLoader.load_scene("res://Scenes/Game/LevelSelect/LevelSelect.tscn")
