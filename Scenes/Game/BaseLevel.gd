@@ -68,6 +68,7 @@ func _ready():
 	_display_available_options()
 	_display_character_goal()
 	_reset_sums()
+	hide_options()
 
 func _display_sums():
 	var character_goal_sum_node = get_node_or_null("%CharacterGoalAndSum")
@@ -107,6 +108,23 @@ func _active_options_updated():
 	if diff == 0:
 		_goal_reached()
 	_display_sums()
+
+func show_options():
+	var available_options_container = get_node_or_null("%AvailableContainer")
+	if available_options_container == null:
+		return
+	available_options_container = available_options_container.get_container()
+	for child in available_options_container.get_children():
+		child.show()
+		yield(get_tree().create_timer(0.3), "timeout")
+
+func hide_options():
+	var available_options_container = get_node_or_null("%AvailableContainer")
+	if available_options_container == null:
+		return
+	available_options_container = available_options_container.get_container()
+	for child in available_options_container.get_children():
+		child.hide()
 
 func _option_selected(option_instance):
 	var available_options_container = get_node_or_null("%AvailableContainer")
