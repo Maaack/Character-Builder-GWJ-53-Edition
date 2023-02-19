@@ -12,6 +12,3 @@ func _on_scroll_bar_visibility_changed() -> void:
 		margin.set("custom_constants/margin_right", 0)
 	else:
 		margin.set("custom_constants/margin_right", _v_scroll.rect_size.x)
-
-func get_container():
-	return get_node_or_null("%OptionsContainer")
