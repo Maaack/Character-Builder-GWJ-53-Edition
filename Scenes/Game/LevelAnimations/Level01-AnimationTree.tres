@@ -72,4 +72,4 @@ states/Success/position = Vector2( 1565.97, 109 )
 transitions = [ "Hovered", "Clicked", SubResource( 9 ), "Level01-Thinking", "Hovered", SubResource( 11 ), "Level01-IntroContinued", "Hovered", SubResource( 23 ), "Level01-IntroContinued", "Level01-Thinking", SubResource( 24 ), "Intro", "Level01-IntroContinued", SubResource( 25 ), "Clicked", "FiguringItOut", SubResource( 26 ), "FiguringItOut", "Solved", SubResource( 28 ), "Clicked", "Solved", SubResource( 29 ), "Solved", "Success", SubResource( 31 ) ]
 start_node = "Intro"
 end_node = "Success"
-graph_offset = Vector2( 530.08, 1.50685 )
+graph_offset = Vector2( -295.606, 1.50685 )

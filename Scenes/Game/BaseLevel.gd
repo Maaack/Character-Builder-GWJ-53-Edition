@@ -187,6 +187,12 @@ func send_player_text(message_text : String):
 		return
 	chat_container.add_player_text(message_text)
 
+func send_terminal_text(message_text : String):
+	var chat_container = get_node_or_null("%AssistantChatBox")
+	if chat_container == null:
+		return
+	chat_container.add_terminal_text(message_text)
+
 func _goal_hovered():
 	pass
 

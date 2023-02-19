@@ -219,8 +219,11 @@ align = 1
 
 [node name="AvailableContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource( 7 )]
 unique_name_in_owner = true
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 36.0
 margin_right = 315.0
+margin_bottom = 568.0
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
@@ -239,6 +242,8 @@ align = 1
 
 [node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 7 )]
 unique_name_in_owner = true
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 36.0
 margin_right = 315.0
 margin_bottom = 380.0
@@ -251,8 +256,7 @@ anchor_bottom = 0.0
 margin_top = 384.0
 margin_right = 315.0
 margin_bottom = 516.0
-values = [ 4, 0, 0 ]
-current_sum = [ 0, 0, 0 ]
+current_sum = [  ]
 
 [node name="Panel2" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 520.0
