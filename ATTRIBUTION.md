@@ -4,6 +4,7 @@
 ### Programming, Writing, and Design
 [Maaack](https://maaack.itch.io/)  
 
+
 ## Sourced / Unaffiliated
 ### Audio
 #### Menu and Game Music
@@ -17,6 +18,11 @@ License: [Attribution License](https://soundimage.org/attribution-info/)
 Author: [Juan Linietsky, Ariel Manzur, and contributors](https://godotengine.org/contact)  
 Source: [godotengine.org](https://godotengine.org/)  
 License: [MIT License](https://github.com/godotengine/godot/blob/master/LICENSE.txt) 
+
+#### Chiptone
+Author: [SFB Games](https://sfbgames.com/)  
+Source: [itch.io : chiptone](https://sfbgames.itch.io/chiptone)  
+License: [CC0 1.0 Universal (CC0 1.0)](https://creativecommons.org/publicdomain/zero/1.0/)  
 
 #### Git
 Author: [Linus Torvalds](https://github.com/torvalds)  
