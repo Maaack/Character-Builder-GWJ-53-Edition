@@ -1,5 +1,5 @@
+tool
 extends Panel
-
 
 
 func get_container():

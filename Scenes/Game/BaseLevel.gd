@@ -161,23 +161,32 @@ func _active_equals_goal() -> bool:
 		return _active_goal_diff() == 0
 	return false
 
-func _level_failure():
+func _post_level_success():
+	emit_signal("success")
+
+func _post_level_failure():
 	emit_signal("failure")
 
 func _level_success():
-	emit_signal("success")
-
-func _level_success_or_failure():
 	var character_goal_sum_node = get_node_or_null("%CharacterGoalAndSum")
 	if character_goal_sum_node == null:
 		return
+	character_goal_sum_node.flash_success()
+	$SuccessSFX.play()
+	_post_level_success()
+
+func _level_failure():
+	var character_goal_sum_node = get_node_or_null("%CharacterGoalAndSum")
+	if character_goal_sum_node == null:
+		return
+	character_goal_sum_node.flash_failure()
+	$FailureSFX.play()
+	_post_level_failure()
+
+func _level_success_or_failure():
 	if _active_equals_goal():
-		character_goal_sum_node.flash_success()
-		$SuccessSFX.play()
 		_level_success()
 	else:
-		character_goal_sum_node.flash_failure()
-		$FailureSFX.play()
 		_level_failure()
 
 func _on_SubmitButton_pressed():
