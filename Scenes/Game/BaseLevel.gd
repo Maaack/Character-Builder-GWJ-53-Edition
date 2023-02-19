@@ -127,6 +127,7 @@ func hide_options():
 		child.hide()
 
 func _option_selected(option_instance):
+	$ClickSFX.play()
 	var available_options_container = get_node_or_null("%AvailableContainer")
 	if available_options_container == null:
 		return
@@ -167,9 +168,16 @@ func _level_success():
 	emit_signal("success")
 
 func _level_success_or_failure():
+	var character_goal_sum_node = get_node_or_null("%CharacterGoalAndSum")
+	if character_goal_sum_node == null:
+		return
 	if _active_equals_goal():
+		character_goal_sum_node.flash_success()
+		$SuccessSFX.play()
 		_level_success()
 	else:
+		character_goal_sum_node.flash_failure()
+		$FailureSFX.play()
 		_level_failure()
 
 func _on_SubmitButton_pressed():

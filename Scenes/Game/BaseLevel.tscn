@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Themes/MainMenuTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/CharacterOptions/CharacterGoal.tscn" type="PackedScene" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://Scenes/Game/ScrollOptionsContainer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Themes/BlackWhiteBorderAltCorneredStylebox.tres" type="StyleBox" id=8]
 [ext_resource path="res://Scenes/CharacterOptions/CharacterGoalAndSum.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Audio/SFX/success.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/SFX/failure.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Audio/SFX/click.wav" type="AudioStream" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "LoadLevel"
@@ -102,6 +105,15 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
+
+[sub_resource type="AudioStreamRandomPitch" id=3]
+audio_stream = ExtResource( 10 )
+
+[sub_resource type="AudioStreamRandomPitch" id=4]
+audio_stream = ExtResource( 11 )
+
+[sub_resource type="AudioStreamRandomPitch" id=5]
+audio_stream = ExtResource( 12 )
 
 [node name="BaseLevel" type="Control"]
 anchor_right = 1.0
@@ -291,11 +303,23 @@ autoplay = "LoadLevel"
 anims/LoadLevel = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = -10.0
 autoplay = true
 bus = "Music"
+
+[node name="SuccessSFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 3 )
+bus = "SFX"
+
+[node name="FailureSFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 4 )
+bus = "SFX"
+
+[node name="ClickSFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 5 )
+bus = "SFX"
 
 [connection signal="mouse_entered" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3/CharacterGoal" to="." method="_on_CharacterGoal_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/HBoxContainer/SubmitButton" to="." method="_on_SubmitButton_pressed"]
