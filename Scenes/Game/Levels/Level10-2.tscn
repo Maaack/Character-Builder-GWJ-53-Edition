@@ -124,11 +124,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.5, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "I prefer to steal from the rich." ],
 "method": "send_assistant_text"
+}, {
+"args": [  ],
+"method": "level_completed"
 } ]
 }
 
@@ -186,6 +189,15 @@ text = "A more charismatic than cunning con-artist, with an unpaid debt to a loa
 values = [ 0, 1, 0, 3, -1, 4 ]
 text_values = [ "A", "B", "A", "C", "-(B)", "D" ]
 icon = ExtResource( 17 )
+
+[node name="AvailableContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" index="1"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_bottom = 568.0
+
+[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 0, 1, 0, 3, -1, 4 ]

@@ -156,8 +156,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5, 2.5, 5, 7.5, 9.5, 12, 13.9, 15.9, 16.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0.5, 2.5, 5, 7.5, 9.5, 12, 13.9, 15.9, 16.5, 17 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [ "Responses recorded." ],
 "method": "send_assistant_text"
@@ -185,6 +185,9 @@ tracks/0/keys = {
 }, {
 "args": [ "WAAAA-" ],
 "method": "send_player_text"
+}, {
+"args": [  ],
+"method": "level_completed"
 } ]
 }
 
@@ -256,6 +259,15 @@ text = "What the creator thinks of themselves."
 values = [ 1, 1, 1, 1, 1, 12 ]
 text_values = [ "?", "?", "?", "?", "?", "?" ]
 icon = ExtResource( 22 )
+
+[node name="AvailableContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" index="1"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_bottom = 568.0
+
+[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 1, 1, 1, 1, 1, 12 ]

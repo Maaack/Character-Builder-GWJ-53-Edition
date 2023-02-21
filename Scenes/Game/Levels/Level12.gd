@@ -12,8 +12,6 @@ func _post_level_success():
 	if not succeeded:
 		animation_state_machine.travel("Success")
 		succeeded = true
-		yield(get_tree().create_timer(17),"timeout")
-		._post_level_success()
 
 func _level_failure():
 	failures += 1

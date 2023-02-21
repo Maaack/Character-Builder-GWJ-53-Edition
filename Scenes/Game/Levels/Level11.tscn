@@ -99,7 +99,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=15]
 resource_name = "Success"
-length = 2.0
+length = 3.0
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -107,11 +107,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.5, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "I bet I was close." ],
 "method": "send_assistant_text"
+}, {
+"args": [  ],
+"method": "level_completed"
 } ]
 }
 
@@ -170,6 +173,15 @@ text = "What the assistant thinks of the creator as a person."
 values = [ 0, 1, 0, 0, 1, 5 ]
 text_values = [ "A", "B", "A", "A", "B", "F" ]
 icon = ExtResource( 8 )
+
+[node name="AvailableContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" index="1"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_bottom = 568.0
+
+[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 0, 1, 0, 0, 1, 5 ]

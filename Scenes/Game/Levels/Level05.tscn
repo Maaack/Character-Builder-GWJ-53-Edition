@@ -123,6 +123,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "Success"
+length = 2.5
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -130,11 +131,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.1, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "Next up, another stat?" ],
 "method": "send_player_text"
+}, {
+"args": [  ],
+"method": "level_completed"
 } ]
 }
 
@@ -216,6 +220,15 @@ values = [ 0, 1, 2, 3 ]
 text_values = [ "", "", "", "?" ]
 keys = [ "Str", "Wis", "Agi", "?" ]
 icon = ExtResource( 13 )
+
+[node name="AvailableContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" index="1"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_bottom = 568.0
+
+[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 0, 1, 2, 3 ]

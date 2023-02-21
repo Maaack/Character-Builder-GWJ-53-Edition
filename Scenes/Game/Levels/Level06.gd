@@ -18,8 +18,6 @@ func _post_level_success():
 	if not succeeded:
 		animation_state_machine.travel("Success")
 		succeeded = true
-		yield(get_tree().create_timer(2.5),"timeout")
-		._post_level_success()
 
 func _goal_hovered():
 	if not hovered_on_goal and not goal_reached:

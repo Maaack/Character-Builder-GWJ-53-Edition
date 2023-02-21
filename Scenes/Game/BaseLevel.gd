@@ -161,8 +161,11 @@ func _active_equals_goal() -> bool:
 		return _active_goal_diff() == 0
 	return false
 
-func _post_level_success():
+func level_completed():
 	emit_signal("success")
+
+func _post_level_success():
+	level_completed()
 
 func _post_level_failure():
 	emit_signal("failure")
