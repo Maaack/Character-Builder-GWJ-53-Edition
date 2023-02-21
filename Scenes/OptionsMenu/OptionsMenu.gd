@@ -8,6 +8,7 @@ const SFX_AUDIO_BUS = 'SFX'
 const MUSIC_AUDIO_BUS = 'Music'
 const MUTE_SETTING = 'Mute'
 const FULLSCREEN_ENABLED = 'FullscreenEnabled'
+const CRT_MODE_ENABLED = 'CRTModeEnabled'
 const AUDIO_SECTION = 'AudioSettings'
 const VIDEO_SECTION = 'VideoSettings'
 
@@ -17,8 +18,7 @@ onready var voice_slider = $VoiceControl/VoiceHSlider
 onready var music_slider = $MusicControl/MusicHSlider
 onready var mute_button = $MuteControl/MuteButton
 onready var fullscreen_button = $FullscreenControl/FullscreenButton
-
-var play_audio_streams : bool = false
+onready var crt_mode_button = $CRTModeControl/CRTModeButton
 
 func _get_bus_volume_2_linear(bus_name : String) -> float:
 	var bus_index : int = AudioServer.get_bus_index(bus_name)
@@ -60,10 +60,12 @@ func _update_ui():
 	music_slider.value = _get_bus_volume_2_linear(MUSIC_AUDIO_BUS)
 	mute_button.pressed = _is_muted()
 	fullscreen_button.pressed = OS.window_fullscreen
+	crt_mode_button.pressed = AppSettings.get_crt_mode_enabled()
 
 func _set_init_config_if_empty() -> void:
 	if not Config.has_section(VIDEO_SECTION):
 		Config.set_config(VIDEO_SECTION, FULLSCREEN_ENABLED, OS.window_fullscreen)
+		Config.set_config(VIDEO_SECTION, CRT_MODE_ENABLED, true)
 	if not Config.has_section(AUDIO_SECTION):
 		Config.set_config(AUDIO_SECTION, MASTER_AUDIO_BUS, _get_bus_volume_2_linear(MASTER_AUDIO_BUS))
 		Config.set_config(AUDIO_SECTION, SFX_AUDIO_BUS, _get_bus_volume_2_linear(SFX_AUDIO_BUS))
@@ -87,6 +89,9 @@ func _set_fullscreen_enabled_from_config() -> void:
 func _set_fullscreen_enabled(value : bool) -> void:
 	OS.window_fullscreen = value
 	Config.set_config(VIDEO_SECTION, FULLSCREEN_ENABLED, value)
+
+func _set_crt_mode_enabled(value : bool) -> void:
+	Config.set_config(VIDEO_SECTION, CRT_MODE_ENABLED, value)
 
 func _set_audio_buses_from_config():
 	if not Config.has_section(AUDIO_SECTION):
@@ -138,6 +143,9 @@ func _on_MuteButton_toggled(button_pressed):
 
 func _on_FullscreenButton_toggled(button_pressed):
 	_set_fullscreen_enabled(button_pressed)
+
+func _on_CRTModeButton_toggled(button_pressed):
+	_set_crt_mode_enabled(button_pressed)
 
 func _on_ResetGameControl_reset_confirmed():
 	GameLog.reset_game_data()

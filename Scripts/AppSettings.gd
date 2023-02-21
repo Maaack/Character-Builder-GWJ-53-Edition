@@ -5,7 +5,9 @@ const INPUT_SECTION = 'InputSettings'
 const AUDIO_SECTION = 'AudioSettings'
 const VIDEO_SECTION = 'VideoSettings'
 
+
 const FULLSCREEN_ENABLED = 'FullscreenEnabled'
+const CRT_MODE_ENABLED = 'CRTModeEnabled'
 const MASTER_AUDIO_BUS = 'Master'
 const VOICE_AUDIO_BUS = 'Voice'
 const SFX_AUDIO_BUS = 'SFX'
@@ -121,8 +123,15 @@ static func set_fullscreen_enabled(value : bool) -> void:
 	OS.window_fullscreen = value
 	Config.set_config(VIDEO_SECTION, FULLSCREEN_ENABLED, value)
 
+static func set_crt_mode_enabled(value : bool) -> void:
+	Config.set_config(VIDEO_SECTION, CRT_MODE_ENABLED, value)
+
+static func get_crt_mode_enabled() -> bool:
+	return Config.get_config(VIDEO_SECTION, CRT_MODE_ENABLED, true)
+
 static func reset_video_config() -> void:
 	Config.set_config(VIDEO_SECTION, FULLSCREEN_ENABLED, OS.window_fullscreen)
+	Config.set_config(VIDEO_SECTION, CRT_MODE_ENABLED, true)
 
 static func set_video_from_config() -> void:
 	var fullscreen_enabled : bool = OS.window_fullscreen

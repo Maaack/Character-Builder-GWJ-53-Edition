@@ -252,7 +252,7 @@ margin_top = 384.0
 margin_right = 315.0
 margin_bottom = 516.0
 values = [ 4, 0, 0 ]
-current_sum = [ 0, 0, 0 ]
+current_sum = [  ]
 
 [node name="Panel2" type="Panel" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 520.0

@@ -1,6 +1,5 @@
 extends Control
 
-
 export(String, FILE, "*.tscn") var game_scene : String
 export(String) var version_name = '0.0.0'
 
@@ -53,6 +52,10 @@ func _input(event):
 	if animation_state_machine.get_current_node() == "Intro" and \
 		(event is InputEventMouseButton or event is InputEventKey):
 		intro_done()
+	if event is InputEventMouseButton:
+		yield(get_tree().create_timer(0.1), "timeout")
+		$ColorRect.visible = AppSettings.get_crt_mode_enabled()
+
 
 func _setup_for_web():
 	if OS.has_feature("web"):
@@ -71,10 +74,11 @@ func _ready():
 	_setup_menu()
 	_setup_version_name()
 	animation_state_machine = $MenuAnimationTree.get("parameters/playback")
+	$ColorRect.visible = AppSettings.get_crt_mode_enabled()
+
 
 func _on_Credits_end_reached():
 	_close_sub_menu()
-
 
 func _on_SelectLevelButton_pressed():
 	SceneLoader.load_scene("res://Scenes/Game/LevelSelect/LevelSelect.tscn")

@@ -32,3 +32,9 @@ func _ready():
 			level_number = level_list.levels.size() - 1
 		level_scene = level_list.levels[level_number]
 	self.level_scene = level_scene
+	$ColorRect.visible = AppSettings.get_crt_mode_enabled()
+
+func _input(event):
+	if event is InputEventMouseButton:
+		yield(get_tree().create_timer(0.1), "timeout")
+		$ColorRect.visible = AppSettings.get_crt_mode_enabled()

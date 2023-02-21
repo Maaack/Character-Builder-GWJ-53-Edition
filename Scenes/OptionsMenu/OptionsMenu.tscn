@@ -185,7 +185,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CRTModeControl" type="HBoxContainer" parent="."]
+margin_top = 210.0
+margin_right = 305.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="CRTModeLabel" type="Label" parent="CRTModeControl"]
+margin_top = 13.0
+margin_right = 225.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+text = "CRT Effect :"
+
+[node name="CRTModeButton" type="CheckButton" parent="CRTModeControl"]
+margin_left = 229.0
+margin_right = 305.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ResetGameControl" parent="." instance=ExtResource( 1 )]
+margin_top = 258.0
+margin_bottom = 290.0
 
 [node name="VocalAudioStreamPlayers" type="Node" parent="."]
 
@@ -197,4 +220,5 @@ __meta__ = {
 [connection signal="value_changed" from="MusicControl/MusicHSlider" to="." method="_on_MusicHSlider_value_changed"]
 [connection signal="toggled" from="MuteControl/MuteButton" to="." method="_on_MuteButton_toggled"]
 [connection signal="toggled" from="FullscreenControl/FullscreenButton" to="." method="_on_FullscreenButton_toggled"]
+[connection signal="toggled" from="CRTModeControl/CRTModeButton" to="." method="_on_CRTModeButton_toggled"]
 [connection signal="reset_confirmed" from="ResetGameControl" to="." method="_on_ResetGameControl_reset_confirmed"]
