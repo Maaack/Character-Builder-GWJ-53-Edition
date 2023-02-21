@@ -245,7 +245,7 @@ states/Success/node = SubResource( 16 )
 states/Success/position = Vector2( 1026.41, 109 )
 transitions = [ "Intro", "IntroContinued", SubResource( 7 ), "IntroContinued", "HoveredOnGoal", SubResource( 10 ), "IntroContinued", "Failure1", SubResource( 22 ), "HoveredOnGoal", "Failure1", SubResource( 23 ), "Failure1", "Failure2", SubResource( 24 ), "Failure2", "Success", SubResource( 25 ), "Failure1", "Success", SubResource( 26 ), "HoveredOnGoal", "Success", SubResource( 27 ), "IntroContinued", "Success", SubResource( 28 ) ]
 start_node = "Intro"
-graph_offset = Vector2( 285.409, -197.657 )
+graph_offset = Vector2( 285.409, -85.8695 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 

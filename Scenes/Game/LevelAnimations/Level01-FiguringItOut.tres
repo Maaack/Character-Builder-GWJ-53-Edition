@@ -2,7 +2,7 @@
 
 [resource]
 resource_name = "Level01-FiguringItOut"
-length = 5.0
+length = 25.0
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -10,10 +10,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 3 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 7, 22 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ "But not these." ],
+"args": [ "What happens if I click submit?" ],
 "method": "send_player_text"
+}, {
+"args": [ "*Breaks the silence of their silent judgement*" ],
+"method": "send_assistant_text"
 } ]
 }

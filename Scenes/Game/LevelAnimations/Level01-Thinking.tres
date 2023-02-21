@@ -2,7 +2,7 @@
 
 [resource]
 resource_name = "Level01-Thinking"
-length = 6.0
+length = 44.0
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -10,10 +10,22 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 5, 14, 24, 40, 44 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "values": [ {
-"args": [ "Well shit, what do I do?" ],
+"args": [ "Well shit, now what do I do?" ],
 "method": "send_player_text"
+}, {
+"args": [ "Maybe I click an option in that middle column." ],
+"method": "send_player_text"
+}, {
+"args": [ "Or maybe I don't and see what happens." ],
+"method": "send_player_text"
+}, {
+"args": [ "You have 3 seconds to do something or I'm kicking you out." ],
+"method": "send_assistant_text"
+}, {
+"args": [  ],
+"method": "kill_game"
 } ]
 }
