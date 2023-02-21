@@ -127,6 +127,7 @@ func hide_options():
 		child.hide()
 
 func _option_selected(option_instance):
+	$ClickSFX.play()
 	var available_options_container = get_node_or_null("%AvailableContainer")
 	if available_options_container == null:
 		return
@@ -160,11 +161,27 @@ func _active_equals_goal() -> bool:
 		return _active_goal_diff() == 0
 	return false
 
-func _level_failure():
+func _post_level_success():
+	emit_signal("success")
+
+func _post_level_failure():
 	emit_signal("failure")
 
 func _level_success():
-	emit_signal("success")
+	var character_goal_sum_node = get_node_or_null("%CharacterGoalAndSum")
+	if character_goal_sum_node == null:
+		return
+	character_goal_sum_node.flash_success()
+	$SuccessSFX.play()
+	_post_level_success()
+
+func _level_failure():
+	var character_goal_sum_node = get_node_or_null("%CharacterGoalAndSum")
+	if character_goal_sum_node == null:
+		return
+	character_goal_sum_node.flash_failure()
+	$FailureSFX.play()
+	_post_level_failure()
 
 func _level_success_or_failure():
 	if _active_equals_goal():
@@ -186,6 +203,12 @@ func send_player_text(message_text : String):
 	if chat_container == null:
 		return
 	chat_container.add_player_text(message_text)
+
+func send_terminal_text(message_text : String):
+	var chat_container = get_node_or_null("%AssistantChatBox")
+	if chat_container == null:
+		return
+	chat_container.add_terminal_text(message_text)
 
 func _goal_hovered():
 	pass

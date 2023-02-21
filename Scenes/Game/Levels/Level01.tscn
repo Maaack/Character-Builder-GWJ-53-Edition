@@ -63,6 +63,10 @@ character_goal = ExtResource( 8 )
 keys = [ "?", "?", "?" ]
 icon = ExtResource( 15 )
 
+[node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
+values = [ 4, 0, 0 ]
+current_sum = [ 0, 0, 0 ]
+
 [node name="AnimationPlayer" parent="." index="1"]
 anims/Level01-ClickSubmit = SubResource( 2 )
 anims/Level01-Clicked = ExtResource( 9 )

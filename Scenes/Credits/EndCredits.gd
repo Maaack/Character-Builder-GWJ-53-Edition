@@ -1,11 +1,12 @@
 extends "res://Scenes/Credits/Credits.gd"
 
+export(Texture) var level_icon : Texture
+
 func end_reached():
 	var node = get_node_or_null("%EndMessagePanel")
 	if node == null:
 		return
 	node.show()
-
 
 func _on_MenuButton_pressed():
 	get_tree().change_scene("res://Scenes/MainMenu/MainMenu.tscn")
@@ -20,4 +21,6 @@ func _ready():
 		if node == null:
 			return
 		node.hide()
-		
+
+func get_level_texture():
+	return level_icon

@@ -26,9 +26,9 @@ func _goal_reached():
 		goal_reached = true
 	._goal_reached()
 
-func _level_success():
+func _post_level_success():
 	if not succeeded:
 		animation_state_machine.travel("Success")
 		succeeded = true
 		yield(get_tree().create_timer(2.5),"timeout")
-		._level_success()
+		._post_level_success()

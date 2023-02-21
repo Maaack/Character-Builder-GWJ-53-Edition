@@ -56,3 +56,9 @@ func set_current_sum(new_values):
 func _ready():
 	_display_values()
 	_display_current_sum()
+
+func flash_success():
+	$AnimationPlayer.play("FlashSuccess")
+
+func flash_failure():
+	$AnimationPlayer.play("FlashFailure")

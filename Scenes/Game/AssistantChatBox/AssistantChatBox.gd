@@ -23,11 +23,11 @@ func _on_scroll_bar_visibility_changed() -> void:
 func _line_buffer_empty():
 	return line_buffer.empty()
 
-func _stop_writing_assistant_text():
+func _stop_writing_buffer_text():
 	line_buffer = ""
 	$ClickSoundsPlayer.stop()
 
-func _write_out_line():
+func _write_out_line(closing_string : String = ""):
 	$ClickSoundsPlayer.play("Typing")
 	while not _line_buffer_empty():
 		var char_timer = get_tree().create_timer(char_wait_time)
@@ -36,21 +36,28 @@ func _write_out_line():
 		if line_buffer.length() > 1:
 			line_buffer = line_buffer.substr(1)
 		else:
-			_stop_writing_assistant_text()
+			_stop_writing_buffer_text()
+	bbcode_text += closing_string
 
-func advance_assistant_text():
+func advance_buffer_text():
 	if not _line_buffer_empty():
 		# finish the text
 		bbcode_text += line_buffer
-		_stop_writing_assistant_text()
+		_stop_writing_buffer_text()
 
 func add_assistant_text(value : String):
-	advance_assistant_text()
+	advance_buffer_text()
 	bbcode_text += "\n[color=#%s][b]Assistant:[/b][/color]\n" % assistant_color.to_html(false)
 	line_buffer = value
 	_write_out_line()
 
 func add_player_text(value : String):
-	advance_assistant_text()
+	advance_buffer_text()
 	bbcode_text += "\n[right][color=#%s][b]Creator:[/b][/color][/right]\n" % player_color.to_html(false)
 	bbcode_text += "[right]" + value + "[/right]"
+
+func add_terminal_text(value : String):
+	advance_buffer_text()
+	bbcode_text += "\n[center]"
+	line_buffer = value
+	_write_out_line("[/center]\n")

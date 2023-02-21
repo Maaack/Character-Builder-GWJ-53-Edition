@@ -2,7 +2,7 @@
 
 [resource]
 resource_name = "Intro"
-length = 3.0
+length = 6.0
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -10,9 +10,12 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5, 1.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0.5, 3.5, 4.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
+"args": [ "Please wait..." ],
+"method": "send_terminal_text"
+}, {
 "args": [ "Welcome to Character Creator. A product of the Rosen & Tyrell Corp. We are happy to have -" ],
 "method": "send_assistant_text"
 }, {

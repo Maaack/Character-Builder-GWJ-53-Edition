@@ -1,8 +1,55 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Themes/MainMenuTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/CharacterOptions/CharacterGoalAndSum.gd" type="Script" id=2]
 [ext_resource path="res://Themes/BaseFont-Bold.tres" type="DynamicFont" id=3]
+
+[sub_resource type="Animation" id=3]
+resource_name = "FlashFailure"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 0, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "FlashSuccess"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 0, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="CharacterGoalAndSum" type="Control"]
 anchor_right = 1.0
@@ -115,3 +162,8 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 3 )
 text = "Current"
 align = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FlashFailure = SubResource( 3 )
+anims/FlashSuccess = SubResource( 1 )
+anims/RESET = SubResource( 2 )
