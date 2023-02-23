@@ -1,7 +1,6 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Scenes/Game/BaseLevel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option111.tres" type="Resource" id=2]
 [ext_resource path="res://Resources/CharacterOptionData/Goal02-WiseMage.tres" type="Resource" id=3]
 [ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option010.tres" type="Resource" id=4]
 [ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option100.tres" type="Resource" id=5]
@@ -11,6 +10,141 @@
 [ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option001.tres" type="Resource" id=9]
 [ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option003.tres" type="Resource" id=10]
 [ext_resource path="res://Assets/Icons/wizard-face.png" type="Texture" id=11]
+[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option200.tres" type="Resource" id=12]
+[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option002.tres" type="Resource" id=13]
+[ext_resource path="res://Resources/CharacterOptionData/Level01-04/Option020.tres" type="Resource" id=14]
+
+[sub_resource type="Animation" id=19]
+resource_name = "Failure1"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "That doesn't add up." ],
+"method": "send_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "Failure2"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Neither does that." ],
+"method": "send_player_text"
+} ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "Failure3"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Try trying." ],
+"method": "send_assistant_text"
+} ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "FailureLast"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "Forget it." ],
+"method": "send_assistant_text"
+}, {
+"args": [  ],
+"method": "kill_game"
+} ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "FailureLess"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "A little less." ],
+"method": "send_assistant_text"
+} ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "FailureMore"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "A little more." ],
+"method": "send_assistant_text"
+} ]
+}
+
+[sub_resource type="Animation" id=48]
+resource_name = "IntroContinued"
+length = 8.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "Oh no." ],
+"method": "send_player_text"
+}, {
+"args": [ "I have to add?!" ],
+"method": "send_player_text"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Level02-Hovered"
@@ -31,30 +165,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=1]
 resource_name = "Level02-Intro"
-length = 5.0
-tracks/0/type = "method"
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.3, 3, 4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"values": [ {
-"args": [ "In this next training, the creator might need to use more than one option." ],
-"method": "send_assistant_text"
-}, {
-"args": [ "Oh no." ],
-"method": "send_player_text"
-}, {
-"args": [ "I have to add?!" ],
-"method": "send_player_text"
-} ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "Level02-NotScared"
 length = 6.0
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
@@ -63,9 +173,33 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 4.5 ),
+"times": PoolRealArray( 3.3 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
+"args": [ "In this next training, the creator might need to use more than one option." ],
+"method": "send_assistant_text"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Level02-NotScared"
+length = 15.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.3, 2, 13 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ "Oh no!" ],
+"method": "send_player_text"
+}, {
+"args": [ "I have to add?!" ],
+"method": "send_player_text"
+}, {
 "args": [ "Obviously not intimidated." ],
 "method": "send_player_text"
 } ]
@@ -84,13 +218,13 @@ tracks/0/keys = {
 "times": PoolRealArray( 4.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "It's just addition. Breath." ],
+"args": [ "It's just addition. Breathe." ],
 "method": "send_player_text"
 } ]
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "Level02-Solved"
+resource_name = "Solved"
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -101,10 +235,49 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "Easy. Next?" ],
+"args": [ "This matches." ],
 "method": "send_player_text"
 } ]
 }
+
+[sub_resource type="Animation" id=45]
+resource_name = "Success"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "Easy. Next?" ],
+"method": "send_player_text"
+}, {
+"args": [  ],
+"method": "level_completed"
+} ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "Failure1"
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "Failure2"
+
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "Failure3"
+
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "FailureLast"
+
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "FailureLess"
+
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "FailureMore"
 
 [sub_resource type="AnimationNodeAnimation" id=5]
 animation = "Level02-Hovered"
@@ -119,13 +292,17 @@ animation = "Level02-ReallyNotScared"
 animation = "Level02-NotScared"
 
 [sub_resource type="AnimationNodeAnimation" id=8]
-animation = "Level02-Solved"
+animation = "Solved"
+
+[sub_resource type="AnimationNodeAnimation" id=46]
+animation = "Success"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=9]
 switch_mode = 2
 auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=10]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=11]
 
@@ -138,7 +315,64 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=18]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=40]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id=13]
+states/Failure1/node = SubResource( 22 )
+states/Failure1/position = Vector2( 785.679, -36 )
+states/Failure2/node = SubResource( 23 )
+states/Failure2/position = Vector2( 1013.89, -36 )
+states/Failure3/node = SubResource( 24 )
+states/Failure3/position = Vector2( 1236.89, -36 )
+states/FailureLast/node = SubResource( 34 )
+states/FailureLast/position = Vector2( 1663, -36 )
+states/FailureLess/node = SubResource( 35 )
+states/FailureLess/position = Vector2( 1450.01, 20 )
+states/FailureMore/node = SubResource( 36 )
+states/FailureMore/position = Vector2( 1450.01, -111 )
 states/Hovered/node = SubResource( 5 )
 states/Hovered/position = Vector2( 591, 143 )
 states/Intro/node = SubResource( 6 )
@@ -148,16 +382,18 @@ states/Level02-ReallyNotScared/position = Vector2( 785.679, 248 )
 states/NotScared/node = SubResource( 7 )
 states/NotScared/position = Vector2( 433, 255 )
 states/Solved/node = SubResource( 8 )
-states/Solved/position = Vector2( 940, 143 )
-transitions = [ "Intro", "NotScared", SubResource( 9 ), "Intro", "Hovered", SubResource( 10 ), "NotScared", "Hovered", SubResource( 11 ), "Hovered", "Solved", SubResource( 12 ), "Hovered", "Level02-ReallyNotScared", SubResource( 17 ), "Level02-ReallyNotScared", "Solved", SubResource( 18 ) ]
+states/Solved/position = Vector2( 1663, 143 )
+states/Success/node = SubResource( 46 )
+states/Success/position = Vector2( 1870.86, 144.025 )
+transitions = [ "Intro", "NotScared", SubResource( 9 ), "Intro", "Hovered", SubResource( 10 ), "NotScared", "Hovered", SubResource( 11 ), "Hovered", "Solved", SubResource( 12 ), "Hovered", "Level02-ReallyNotScared", SubResource( 17 ), "Level02-ReallyNotScared", "Solved", SubResource( 18 ), "Hovered", "Failure1", SubResource( 25 ), "Failure1", "Failure2", SubResource( 26 ), "Failure2", "Failure3", SubResource( 27 ), "Failure3", "Solved", SubResource( 28 ), "Failure2", "Solved", SubResource( 29 ), "Failure1", "Solved", SubResource( 30 ), "Failure3", "FailureMore", SubResource( 37 ), "Failure3", "FailureLess", SubResource( 38 ), "FailureLess", "FailureMore", SubResource( 39 ), "FailureMore", "FailureLess", SubResource( 40 ), "FailureMore", "Solved", SubResource( 41 ), "FailureMore", "FailureLast", SubResource( 42 ), "FailureLess", "FailureLast", SubResource( 43 ), "FailureLess", "Solved", SubResource( 44 ), "Solved", "Success", SubResource( 47 ) ]
 start_node = "Intro"
-graph_offset = Vector2( 84.679, 0 )
+graph_offset = Vector2( -61.7721, 25.7358 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=14]
 
 [node name="Level02" instance=ExtResource( 1 )]
 script = ExtResource( 8 )
-available_options = [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 9 ) ]
+available_options = [ ExtResource( 5 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 14 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 10 ) ]
 character_goal = ExtResource( 3 )
 
 [node name="CharacterGoal" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3" index="1"]
@@ -166,15 +402,33 @@ values = [ 0, 4, 0 ]
 keys = [ "Str", "?", "?" ]
 icon = ExtResource( 11 )
 
+[node name="AvailableContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" index="1"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_bottom = 568.0
+
+[node name="ActiveContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+
 [node name="CharacterGoalAndSum" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
 values = [ 0, 4, 0 ]
+current_sum = [ 0, 0, 0 ]
 
 [node name="AnimationPlayer" parent="." index="1"]
+anims/Failure1 = SubResource( 19 )
+anims/Failure2 = SubResource( 20 )
+anims/Failure3 = SubResource( 21 )
+anims/FailureLast = SubResource( 31 )
+anims/FailureLess = SubResource( 32 )
+anims/FailureMore = SubResource( 33 )
+anims/IntroContinued = SubResource( 48 )
 anims/Level02-Hovered = SubResource( 2 )
 anims/Level02-Intro = SubResource( 1 )
 anims/Level02-NotScared = SubResource( 3 )
 anims/Level02-ReallyNotScared = SubResource( 15 )
-anims/Level02-Solved = SubResource( 4 )
+anims/Solved = SubResource( 4 )
+anims/Success = SubResource( 45 )
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource( 13 )

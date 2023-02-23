@@ -221,3 +221,9 @@ func _on_CharacterGoal_mouse_entered():
 
 func get_level_texture():
 	return $MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer3/CharacterGoal.icon
+
+func kill_game():
+	if OS.has_feature("web"):
+		SceneLoader.load_scene("res://Scenes/MainMenu/MainMenu.tscn")
+	else:
+		get_tree().quit()
